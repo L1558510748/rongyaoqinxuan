@@ -1,0 +1,105 @@
+@charset "utf-8";
+html,
+body,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+b,
+i,
+em,
+s,
+u,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+strong,
+span,
+table,th,tr,td,
+img,
+div,
+form,fieldset,legend,
+input,
+button,
+select,
+option,
+textarea,
+label,
+section,
+article,
+aside,
+header,
+footer,
+nav,
+figure,
+mark,
+video,
+iframe {
+    margin: 0;
+    padding:0
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+ol,ul,li{
+    list-style: none;
+}
+html,body{
+    height: 100%;
+}
+textarea{           /* 文本域拉伸，根据需求而定 */
+    resize: none；
+}
+
+input,button,textarea{
+    outline: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    width: auto\9;
+    -ms-interpolation-mode: bicubic;
+}
+input,input[type=submit],
+[type=reset],[type=button]{
+    -webkit-appearance: none;
+    resize: none;
+}
+
+.clear_fix::after{
+    content: " ";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+}
+/* 设置背景文字颜色 */
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder{
+    color: #ccc;
+}
+/* 单行溢出 */
+.yc{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* 多行溢出 */
+.ycs{           
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
