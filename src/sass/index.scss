@@ -1,13 +1,18 @@
 html,body{
+    background-color: rgb(247, 247, 247);
     .banner{
         width: 100%;
         height: 450px;
         background-color: red;
+        background-image: url(https://res.vmallres.com/pimages/cnqx/pages/picImages/UI6nmKD1MJxhZiiCLvTB.jpg);
         .banner_content{
             width: 1080px;
+            position: relative;
             height: 450px;
             margin: 0 auto;
             .menu{
+                position: absolute;
+                
             width: 258px;
             height: 450px;
             z-index: 1;
@@ -20,23 +25,134 @@ html,body{
                 .menu_li{
                     width: 100%;
                     height: 60px;
+                    padding: 0 24px 0 20px;
+                    box-sizing: border-box;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                     .nav_box{
-                        width: 100%;
-                        height: 60px;
-                        text-align: center;
+                        box-sizing: border-box;
+                        h5{
+                            font-size: 15px;
+                            margin-bottom: 2px;
+                            font-weight: 500;
+                        }
                         .title_li{
-                            text-align: center;
                             li{
-
                                 float: left;
                                 font-size: 12px;
+                                &:hover{
+                                    color: #ff00d0;
+                                }
+                                cursor: pointer;
                             }
+                        }
+                    }
+                }
+                
+            }
+        }
+        }
+        
+    }
+    .content{
+        width: 100%;
+        box-sizing: border-box;
+        background-color: rgb(247, 247, 247);
+        .goods_list{
+            height: 724px;
+            width: 1080px;
+            margin:auto;
+            // margin: 28px auto;
+            // border: 1px solid;
+            margin-top: 20px;
+            box-sizing: border-box;
+            
+            .title_box{
+                height: 30px;
+                width: 1080px;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                .classify_title{
+                    width: 990px;
+                    height: 30px;
+                    h3{
+                        font-size: 24px;
+                        color: #333;
+                        margin-right: 14px;
+                        line-height: 30px;
+                        font-weight: 500;
+                        // width: 200px;
+                        display: inline-block;
+                    }
+                    p{
+                        display: inline-block;
+                        font-size: 14px;
+                        line-height: 16px;
+                        letter-spacing: 3px;
+                        font-weight: 300;
+                    }
+                }
+                a{
+                    line-height: 14px;
+                    font-size: 14px;
+                }
+            }
+            .el_row{
+                width: 1080px;
+                height: 688px;
+                // padding: 5px;
+                box-sizing: border-box;
+                // .el_img{
+                    // display: inline-block;
+                    // height: 324px;
+                    // width: 636px;
+                    // border-radius: 4px;
+                    
+                // }
+                .row1, .row2{
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                .row1{
+                    figure{
+                        &:nth-child(1){
+                            width: 636px;
+                            height: 324px;
+                            padding: 0px;
+                            img{
+                                width: 636px;
+                                height: 324px;
+                            }
+                        }
+                    }
+                }
+                figure{
+                    width: 204px;
+                    float: left;
+                    height: 324px;
+                    background-color: #fff;
+                    padding: 5px;
+                    margin: 10px 4px;
+                    box-sizing: border-box;
+                    img{
+                        width: 194px;
+                        height: 194px;
+                        margin-bottom: 40px;
+                    }
+                    figcaption{
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        flex-direction: column;
+                        p{
+                            line-height: 30px;
                         }
                     }
                 }
             }
         }
-        }
-        
     }
 }
