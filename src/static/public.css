@@ -73,12 +73,12 @@ html header .container .head_nav a img, body header .container .head_nav a img {
 }
 
 html header .container .head_nav .head_right, body header .container .head_nav .head_right {
-  width: 360px;
+  width: 380px;
 }
 
 html header .container .head_nav .head_right .search_box, body header .container .head_nav .head_right .search_box {
   float: left;
-  width: 224px;
+  width: 244px;
   height: 36px;
   border-radius: 18px;
   padding: 0 16px;
@@ -110,6 +110,31 @@ html header .container .head_nav .head_right .search_box .carousel, body header 
   line-height: 36px;
   display: flex;
   justify-content: center;
+}
+
+html header .container .head_nav .head_right .search_box .carousel .box, body header .container .head_nav .head_right .search_box .carousel .box {
+  position: relative;
+  width: 65px;
+  height: 36px;
+  overflow: hidden;
+}
+
+html header .container .head_nav .head_right .search_box .carousel .box ul, body header .container .head_nav .head_right .search_box .carousel .box ul {
+  width: 65px;
+  height: 36px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+  font-size: 12px;
+}
+
+html header .container .head_nav .head_right .search_box .carousel .box ul li, body header .container .head_nav .head_right .search_box .carousel .box ul li {
+  width: 65px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 html header .container .head_nav .head_right .search_box i, body header .container .head_nav .head_right .search_box i {

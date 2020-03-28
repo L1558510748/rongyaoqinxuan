@@ -58,10 +58,10 @@ html,body{
                     }
                 }
                 .head_right{
-                    width: 360px;
+                    width: 380px;
                     .search_box{
                         float: left;
-                        width: 224px;
+                        width: 244px;
                         height: 36px;
                         border-radius: 18px;
                         padding: 0 16px;
@@ -90,6 +90,33 @@ html,body{
                             line-height: 36px;
                             display: flex;
                             justify-content: center;
+                            // position: relative;
+                            // overflow: hidden;
+                            .box{
+                                position: relative;
+                                width: 65px;
+                                height: 36px;
+                                overflow: hidden;
+                                // border: 1px solid;
+                                ul{
+                                    // overflow: hidden;
+                                    width: 65px;
+                                    height: 36px;
+                                    padding: 0;
+                                    margin: 0;
+                                    list-style: none;
+                                    position: absolute;
+                                    top: 0;
+                                    font-size: 12px;
+                                    li{
+                                        width: 65px;
+                                        white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+                                    }
+                                }
+                            }
+                            
                         }
                         i{
                             width: 17px;
