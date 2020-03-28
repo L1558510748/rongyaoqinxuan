@@ -10,4 +10,20 @@ $(document).ready(function () {
         }
         console.log($(".box>ul>li").length)
     }, 3000);
+    $('#menu>ul').find('li').click(function () {
+        $(this).addClass('active').siblings().removeClass("active");
+        console.log($(this))
+        $(".content").children('div').css('display', 'none').eq($(this).index()).css('display', 'block');
+    })
+    
+    $("#menu>ul").find("li").hover(function () {
+            
+            $("#menu2").css({"display":"block"})
+            
+        }, function () {
+            // out
+            $("#menu2").css({"display":"none"})
+        })
+    // );$("#menu2").css({"display":"block"})
+    // document.getElementsByClassName("menu2")[0].style.display="block";
 })
