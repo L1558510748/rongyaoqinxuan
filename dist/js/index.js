@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){var o=0;setInterval(function(){o==$(".box>ul>li").length?(o=0,$(".box>ul").css("top",0)):($(".box>ul").animate({top:-36*o+"px"},500),o++),console.log($(".box>ul>li").length)},3e3)});
