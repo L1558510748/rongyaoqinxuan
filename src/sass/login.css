@@ -84,8 +84,8 @@ body .content div input {
   background-color: #f2f2f2;
 }
 
-html .content div #submitbtn,
-body .content div #submitbtn {
+html .content div .submitbtn,
+body .content div .submitbtn {
   width: 100px;
   height: 30px;
   background-color: skyblue;

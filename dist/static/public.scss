@@ -38,6 +38,20 @@ body {
             }
           }
         }
+        .logined{
+          float: right;
+          display: none;
+          span {
+            line-height: 40px;
+            color: #333;
+            font-size: 12px;
+            margin-left: 14px;
+            text-decoration: none;
+            & .myorder {
+              margin: 0;
+            }
+          }
+        }
       }
     }
 
@@ -160,8 +174,6 @@ body {
   footer {
     height: 453px;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     background-color: #333;
     .guarantee {
       border-top: 1px solid #ccc;
@@ -257,21 +269,19 @@ body {
     }
   }
   .side_help {
-    height: 200px;
+    height: 150px;
     width: 50px;
     text-align: center;
     right: 0;
-    bottom: 50px;
+    bottom: 100px;
     position: fixed;
     z-index: 1;
     background-color: #fff;
 
-    &:hover .hover_info {
-      display: block;
-    }
+    
     
       ul {
-        height: 200px;
+        height: 150px;
         width: 50px;
         display: flex;
         flex-direction: column;
@@ -306,11 +316,11 @@ body {
                 }
               }
         }
-        #fixed_phone,#fixed_cart{
+        #fixed_phone,#fixed_cart,#fixed_top{
             position: relative;
             &:hover .fixed_msg{
+                right: 55px;
                 width: 80px;
-                height: 30px;
                 // display: block;
                 // font-size: 12px;
                 visibility: visible;
@@ -318,19 +328,49 @@ body {
             .fixed_msg{
                 position: absolute;
                 top: 0;
+                z-index: -1;
                 right: 55px;
-                // padding: 5px 10px;
                 background-color: #fff;
                 width: 0px;
-                height: 0px;
+                height: 30px;
                 border-radius: 5px;
                 line-height: 30px;
-                // border-radius: 3px;
                 transition: .5s;
-                // font-size: 0px;
                 visibility: hidden;
             }
         }
+    }
+    #fixed_top{
+      position: fixed;
+      right: 0;
+      visibility: hidden;
+      bottom: 50px;
+      height: 50px;
+      width: 50px;
+      background-color: white;
+      line-height: 50px;
+      color: #fff;
+      background-color: #fa4187;
+      &:hover{
+        .fixed_msg{
+          width: 80px;
+          visibility: visible;
+        }
+      }
+      .fixed_msg{
+       
+        position: absolute;
+        top: 10px;
+        z-index: -1;
+        right: 55px;
+        background-color: #fff;
+        width: 0px;
+        height: 30px;
+        border-radius: 5px;
+        line-height: 30px;
+        transition: .5s;
+        visibility: hidden;
+    }
     }
       
     

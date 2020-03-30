@@ -58,6 +58,26 @@ body header .backColor .head_info .user_info a .myorder {
   margin: 0;
 }
 
+html header .backColor .head_info .logined,
+body header .backColor .head_info .logined {
+  float: right;
+  display: none;
+}
+
+html header .backColor .head_info .logined span,
+body header .backColor .head_info .logined span {
+  line-height: 40px;
+  color: #333;
+  font-size: 12px;
+  margin-left: 14px;
+  text-decoration: none;
+}
+
+html header .backColor .head_info .logined span .myorder,
+body header .backColor .head_info .logined span .myorder {
+  margin: 0;
+}
+
 html header .container,
 body header .container {
   height: 76px;
@@ -203,8 +223,6 @@ html footer,
 body footer {
   height: 453px;
   width: 100%;
-  position: fixed;
-  bottom: 0;
   background-color: #333;
 }
 
@@ -329,24 +347,19 @@ body footer .foot .foot_right {
 
 html .side_help,
 body .side_help {
-  height: 200px;
+  height: 150px;
   width: 50px;
   text-align: center;
   right: 0;
-  bottom: 50px;
+  bottom: 100px;
   position: fixed;
   z-index: 1;
   background-color: #fff;
 }
 
-html .side_help:hover .hover_info,
-body .side_help:hover .hover_info {
-  display: block;
-}
-
 html .side_help ul,
 body .side_help ul {
-  height: 200px;
+  height: 150px;
   width: 50px;
   display: flex;
   flex-direction: column;
@@ -387,29 +400,68 @@ body .side_help ul #fixed_code .hover_info img {
   height: 100%;
 }
 
-html .side_help ul #fixed_phone, html .side_help ul #fixed_cart,
+html .side_help ul #fixed_phone, html .side_help ul #fixed_cart, html .side_help ul #fixed_top,
 body .side_help ul #fixed_phone,
-body .side_help ul #fixed_cart {
+body .side_help ul #fixed_cart,
+body .side_help ul #fixed_top {
   position: relative;
 }
 
-html .side_help ul #fixed_phone:hover .fixed_msg, html .side_help ul #fixed_cart:hover .fixed_msg,
+html .side_help ul #fixed_phone:hover .fixed_msg, html .side_help ul #fixed_cart:hover .fixed_msg, html .side_help ul #fixed_top:hover .fixed_msg,
 body .side_help ul #fixed_phone:hover .fixed_msg,
-body .side_help ul #fixed_cart:hover .fixed_msg {
+body .side_help ul #fixed_cart:hover .fixed_msg,
+body .side_help ul #fixed_top:hover .fixed_msg {
+  right: 55px;
   width: 80px;
-  height: 30px;
   visibility: visible;
 }
 
-html .side_help ul #fixed_phone .fixed_msg, html .side_help ul #fixed_cart .fixed_msg,
+html .side_help ul #fixed_phone .fixed_msg, html .side_help ul #fixed_cart .fixed_msg, html .side_help ul #fixed_top .fixed_msg,
 body .side_help ul #fixed_phone .fixed_msg,
-body .side_help ul #fixed_cart .fixed_msg {
+body .side_help ul #fixed_cart .fixed_msg,
+body .side_help ul #fixed_top .fixed_msg {
   position: absolute;
   top: 0;
+  z-index: -1;
   right: 55px;
   background-color: #fff;
   width: 0px;
-  height: 0px;
+  height: 30px;
+  border-radius: 5px;
+  line-height: 30px;
+  transition: .5s;
+  visibility: hidden;
+}
+
+html .side_help #fixed_top,
+body .side_help #fixed_top {
+  position: fixed;
+  right: 0;
+  visibility: hidden;
+  bottom: 50px;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  line-height: 50px;
+  color: #fff;
+  background-color: #fa4187;
+}
+
+html .side_help #fixed_top:hover .fixed_msg,
+body .side_help #fixed_top:hover .fixed_msg {
+  width: 80px;
+  visibility: visible;
+}
+
+html .side_help #fixed_top .fixed_msg,
+body .side_help #fixed_top .fixed_msg {
+  position: absolute;
+  top: 10px;
+  z-index: -1;
+  right: 55px;
+  background-color: #fff;
+  width: 0px;
+  height: 30px;
   border-radius: 5px;
   line-height: 30px;
   transition: .5s;

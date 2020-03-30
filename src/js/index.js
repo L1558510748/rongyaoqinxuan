@@ -1,29 +1,106 @@
-$(document).ready(function () {
-    var t = 0;
-    setInterval(() => {
-        if (t == $(".box>ul>li").length) {
-            t = 0;
-            $(".box>ul").css("top", 0)
-        } else {
-            $(".box>ul").animate({ top: -36 * t + "px" },500)
-            t++;
+// $(document).ready(function () {
+//     var t = 0;
+//     setInterval(() => {
+//         if (t == $(".box>ul>li").length) {
+//             t = 0;
+//             $(".box>ul").css("top", 0)
+//         } else {
+//             $(".box>ul").animate({ top: -36 * t + "px" },500)
+//             t++;
+//         }
+//     }, 3000);
+//     $(".list").children("li").click(function(){
+//         $(this).addClass("active").siblings().removeClass("active");
+//         $("html").animate({
+//             scrollTop:$(".floor").eq($(this).index()).offset().top
+//         })
+//     })
+//     $("#fixed_top").css("display","none");
+//     $("#fixed_top").click(function(e){
+//         $("body,html").animate({scrollTop:'0'},500);
+//         return false
+//     })
+//     onscroll=function () {
+//         console.log($(document).scrollTop())
+//         if(200<$(document).scrollTop()){
+//             $(".floor_list").css("right","0px");
+//             $("#fixed_top").css("visibility","visible");
+//             $("#fixed_top").fadeIn(500);           
+//         }
+//         else{
+//             $(".floor_list").css("right","-86px");
+//             $("#fixed_top").fadeOut(500);
+//             console.log("width"+$(".floor_list").width())
+//         }
+//       }
+// })
+class Index {
+    constructor() {
+        this.box = $(".box");
+        this.top = $("#fixed_top");
+        this.quit=document.getElementById("quit");
+        
+        this.addEvent();
+    }
+    addEvent() {
+       
+        var that=this;
+        this.check();
+        this.quit.onclick=function () {
+            that.exit();
+          }
+        onscroll = this.pagescroll;
+        $(top).click(this.scrolltop);
+        this.boxscroll();
+        this.list();
+    }
+    exit(){
+        sessionStorage.removeItem("user");
+        location.reload();
+    }
+    check(){
+        var user=sessionStorage.getItem("user");
+        if(user){
+            console.log(JSON.parse(user).sucMsg)
+            $(".user_info").css("display","none");
+            $(".logined").css("display","block");
+            $("#username").html(JSON.parse(user).sucMsg)
         }
-    }, 3000);
-    $(".list").children("li").click(function(){
-        $(this).addClass("active").siblings().removeClass("active");
-        $("html").animate({
-            scrollTop:$(".floor").eq($(this).index()).offset().top
+    }
+    scrolltop(){
+        $("body,html").animate({scrollTop:'0'},500);
+        // return false
+    }
+    pagescroll() {
+        if (200 < $(document).scrollTop()) {
+            $(".floor_list").css("right", "0px");
+            $("#fixed_top").css("visibility", "visible");
+            $("#fixed_top").fadeIn(500);
+        }
+        else {
+            $(".floor_list").css("right", "-86px");
+            $("#fixed_top").fadeOut(500);
+        }
+    }
+    boxscroll() {
+        var t = 0;
+        setInterval(() => {
+            if (t == $(".box>ul>li").length) {
+                t = 0;
+                $(".box>ul").css("top", 0)
+            } else {
+                $(".box>ul").animate({ top: -36 * t + "px" }, 500)
+                t++;
+            }
+        }, 3000);
+    }
+    list() {
+        $(".list").children("li").click(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            $("html").animate({
+                scrollTop: $(".floor").eq($(this).index()).offset().top
+            })
         })
-    })
-    onscroll=function () {
-        console.log($(document).scrollTop())
-        if(100<$(document).scrollTop()){
-            $(".floor_list").css("right","0px");
-            console.log("width"+$(".floor_list").width())
-        }
-        else{
-            $(".floor_list").css("right","-86px");
-            console.log("width"+$(".floor_list").width())
-        }
-      }
-})
+    }
+}
+new Index();
