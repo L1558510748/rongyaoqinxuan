@@ -57,7 +57,7 @@ body {
         display: flex;
         justify-content: space-between;
         .menu {
-          // margin:0 auto;
+          position: relative;
           width: 258px;
           height: 450px;
           z-index: 5;
@@ -78,6 +78,9 @@ body {
               &:hover{
                   background-color: #eee;
               }
+              &:hover .second{
+                display: block;
+            }
               .nav_box {
                 box-sizing: border-box;
                 h5 {
@@ -98,13 +101,41 @@ body {
               }
             }
           }
-        }
-        .menu2{
-            width: 822px;
-            height: 450px;
-            z-index: 2;
-            background-color: #eee;
-            display: none;
+         
+          .second{
+              position: absolute;
+              width: 822px;
+              height: 450px;
+              top: 0;
+              left: 258px;
+              padding: 41px 0 0 25px;
+              box-sizing: border-box;
+             
+              background-color:#eee;
+              display: none;
+              li{
+                  width: 176px;
+                  float: left;
+                  height: 176px;
+                  background-color: #fff;
+                  margin: 0 16px 16px 0;
+                  border-radius: 5px;
+                  display: flex;
+                  justify-content: space-around;
+                  align-items: center;
+                  figure{
+                      text-align: center;
+                      font-size: 12px;
+                      img{
+                          width: 107px;
+                          height: 107px;
+                      }
+                      i{
+                          font-size: 40px;
+                      }
+                  }
+              }
+          }
         }
       }
     }
@@ -209,5 +240,32 @@ body {
         }
       }
     }
+  }
+  .floor_list{
+      position: fixed;
+      right: -86px;
+      top: 50px;
+      width: 86px;
+      height: 105px;
+      background-color: white;
+      transition: 1s;
+    //   display: none;
+      ul{
+          li{
+              height: 35px;
+              width: 100%;
+              font-size: 14px;
+              line-height: 35px;
+              text-align: center;
+              color: #ccc;
+              border-bottom: 1px solid #eee;
+              &.active{
+                  color: #ff00d0;
+              }
+              &:hover{
+                  color: #888;
+              }
+          }
+      }
   }
 }

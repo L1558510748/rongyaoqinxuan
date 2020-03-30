@@ -58,6 +58,7 @@ html .banner .banner_content .menu_wrap, body .banner .banner_content .menu_wrap
   justify-content: space-between; }
 
 html .banner .banner_content .menu_wrap .menu, body .banner .banner_content .menu_wrap .menu {
+  position: relative;
   width: 258px;
   height: 450px;
   z-index: 5;
@@ -81,6 +82,9 @@ html .banner .banner_content .menu_wrap .menu ul .menu_li, body .banner .banner_
 html .banner .banner_content .menu_wrap .menu ul .menu_li:hover, body .banner .banner_content .menu_wrap .menu ul .menu_li:hover {
   background-color: #eee; }
 
+html .banner .banner_content .menu_wrap .menu ul .menu_li:hover .second, body .banner .banner_content .menu_wrap .menu ul .menu_li:hover .second {
+  display: block; }
+
 html .banner .banner_content .menu_wrap .menu ul .menu_li .nav_box, body .banner .banner_content .menu_wrap .menu ul .menu_li .nav_box {
   box-sizing: border-box; }
 
@@ -97,12 +101,38 @@ html .banner .banner_content .menu_wrap .menu ul .menu_li .nav_box .title_li li,
 html .banner .banner_content .menu_wrap .menu ul .menu_li .nav_box .title_li li:hover, body .banner .banner_content .menu_wrap .menu ul .menu_li .nav_box .title_li li:hover {
   color: #ff00d0; }
 
-html .banner .banner_content .menu_wrap .menu2, body .banner .banner_content .menu_wrap .menu2 {
+html .banner .banner_content .menu_wrap .menu .second, body .banner .banner_content .menu_wrap .menu .second {
+  position: absolute;
   width: 822px;
   height: 450px;
-  z-index: 2;
+  top: 0;
+  left: 258px;
+  padding: 41px 0 0 25px;
+  box-sizing: border-box;
   background-color: #eee;
   display: none; }
+
+html .banner .banner_content .menu_wrap .menu .second li, body .banner .banner_content .menu_wrap .menu .second li {
+  width: 176px;
+  float: left;
+  height: 176px;
+  background-color: #fff;
+  margin: 0 16px 16px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; }
+
+html .banner .banner_content .menu_wrap .menu .second li figure, body .banner .banner_content .menu_wrap .menu .second li figure {
+  text-align: center;
+  font-size: 12px; }
+
+html .banner .banner_content .menu_wrap .menu .second li figure img, body .banner .banner_content .menu_wrap .menu .second li figure img {
+  width: 107px;
+  height: 107px; }
+
+html .banner .banner_content .menu_wrap .menu .second li figure i, body .banner .banner_content .menu_wrap .menu .second li figure i {
+  font-size: 40px; }
 
 html .content, body .content {
   width: 100%;
@@ -187,3 +217,27 @@ html .content .goods_list .el_row figure figcaption, body .content .goods_list .
 
 html .content .goods_list .el_row figure figcaption p, body .content .goods_list .el_row figure figcaption p {
   line-height: 30px; }
+
+html .floor_list, body .floor_list {
+  position: fixed;
+  right: -86px;
+  top: 50px;
+  width: 86px;
+  height: 105px;
+  background-color: white;
+  transition: 1s; }
+
+html .floor_list ul li, body .floor_list ul li {
+  height: 35px;
+  width: 100%;
+  font-size: 14px;
+  line-height: 35px;
+  text-align: center;
+  color: #ccc;
+  border-bottom: 1px solid #eee; }
+
+html .floor_list ul li.active, body .floor_list ul li.active {
+  color: #ff00d0; }
+
+html .floor_list ul li:hover, body .floor_list ul li:hover {
+  color: #888; }

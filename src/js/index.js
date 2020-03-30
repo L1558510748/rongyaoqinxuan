@@ -8,22 +8,22 @@ $(document).ready(function () {
             $(".box>ul").animate({ top: -36 * t + "px" },500)
             t++;
         }
-        console.log($(".box>ul>li").length)
     }, 3000);
-    $('#menu>ul').find('li').click(function () {
-        $(this).addClass('active').siblings().removeClass("active");
-        console.log($(this))
-        $(".content").children('div').css('display', 'none').eq($(this).index()).css('display', 'block');
-    })
-    
-    $("#menu>ul").find("li").hover(function () {
-            
-            $("#menu2").css({"display":"block"})
-            
-        }, function () {
-            // out
-            $("#menu2").css({"display":"none"})
+    $(".list").children("li").click(function(){
+        $(this).addClass("active").siblings().removeClass("active");
+        $("html").animate({
+            scrollTop:$(".floor").eq($(this).index()).offset().top
         })
-    // );$("#menu2").css({"display":"block"})
-    // document.getElementsByClassName("menu2")[0].style.display="block";
+    })
+    onscroll=function () {
+        console.log($(document).scrollTop())
+        if(100<$(document).scrollTop()){
+            $(".floor_list").css("right","0px");
+            console.log("width"+$(".floor_list").width())
+        }
+        else{
+            $(".floor_list").css("right","-86px");
+            console.log("width"+$(".floor_list").width())
+        }
+      }
 })

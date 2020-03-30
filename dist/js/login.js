@@ -1,0 +1,1 @@
+"use strict";$(document).ready(function(){$(".box").find("li").click(function(){$(this).addClass("active").siblings().removeClass("active"),$(".content").children("div").css("display","none").eq($(this).index()).css("display","block")})});
