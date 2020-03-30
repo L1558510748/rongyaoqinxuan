@@ -43,16 +43,20 @@ class Index {
         this.addEvent();
     }
     addEvent() {
-       
+       $(".row1 figure").click(function () {
+           console.log($(this));
+           alert(1)
+         })
         var that=this;
         this.check();
         this.quit.onclick=function () {
             that.exit();
           }
         onscroll = this.pagescroll;
-        $(top).click(this.scrolltop);
+        $(this.top).click(this.scrolltop);
         this.boxscroll();
         this.list();
+        this.init();
     }
     exit(){
         sessionStorage.removeItem("user");
@@ -68,7 +72,7 @@ class Index {
         }
     }
     scrolltop(){
-        $("body,html").animate({scrollTop:'0'},500);
+        $("html,body").animate({scrollTop:'0'},500);
         // return false
     }
     pagescroll() {
@@ -101,6 +105,34 @@ class Index {
                 scrollTop: $(".floor").eq($(this).index()).offset().top
             })
         })
+    }
+    init(){
+        var that=this;
+        $.getJSON("http://localhost/rongyaoqinxuan/src/static/goods.json",
+            function (data) {
+                console.log(data)
+                var str1="";
+                var str2="";
+                for(var i=0;i<data.length;i++){
+                    // if(i<3){
+                        str1+=`<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    <figcaption><p class="yc">${data[i].name}</p>
+                    <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
+                    </figure>`;
+                    
+                }
+                $(".row1").html(str1);
+                that.figclick();
+            }
+        );
+       
+    }
+    figclick(){
+        $("figure").click(function () {
+            var gid=($(this).attr("id"));
+            console.log(gid)
+            $(window).attr('location',"./html/productdetail.html?id="+gid)
+          })
     }
 }
 new Index();
