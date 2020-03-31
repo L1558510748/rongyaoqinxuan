@@ -55,7 +55,10 @@ class Detail {
             url: "http://localhost/rongyaoqinxuan/src/static/php/cart.php",
             data: {user:this.user,
                 goodsid:this.id,
-                    num:$("#num").html()*1
+                price:this.data.nowprice,
+                imgsrc:this.data.img1,
+                num:$("#num").html()*1,
+                goodsname:this.data.name
             },
             success: function (response) {
                 console.log(response)

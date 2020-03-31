@@ -25,9 +25,12 @@ html .content_wrap, body .content_wrap {
 html .content_wrap .content, body .content_wrap .content {
   width: 1080px;
   margin: 0 auto;
-  padding: 165px;
   box-sizing: border-box;
   text-align: center;
+}
+
+html .content_wrap .content .tips, body .content_wrap .content .tips {
+  padding: 163px;
 }
 
 html .content_wrap .content .tips img, body .content_wrap .content .tips img {
@@ -49,4 +52,76 @@ html .content_wrap .content .tips h5, body .content_wrap .content .tips h5 {
   color: #888;
   padding: 5px;
   box-sizing: border-box;
+}
+
+html .content_wrap .content .shoppingcart, body .content_wrap .content .shoppingcart {
+  width: 100%;
+  display: none;
+  height: 1200px;
+  margin: 0 auto;
+}
+
+html .content_wrap .content .shoppingcart .cart_head, body .content_wrap .content .shoppingcart .cart_head {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  margin: 10px 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+html .content_wrap .content .shoppingcart .cart_head li, body .content_wrap .content .shoppingcart .cart_head li {
+  text-align: center;
+  float: left;
+  width: 180px;
+  line-height: 40px;
+}
+
+html .content_wrap .content .shoppingcart .cart_head li:first-child, body .content_wrap .content .shoppingcart .cart_head li:first-child {
+  width: 80px;
+}
+
+html .content_wrap .content .shoppingcart .cart_head li:first-child input, body .content_wrap .content .shoppingcart .cart_head li:first-child input {
+  padding: 0;
+  margin: 0;
+  width: 15px;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul, body .content_wrap .content .shoppingcart .cart_list ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul li, body .content_wrap .content .shoppingcart .cart_list ul li {
+  width: 180px;
+  float: left;
+  text-align: center;
+  line-height: 100px;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul li:first-child, body .content_wrap .content .shoppingcart .cart_list ul li:first-child {
+  text-align: left;
+  margin-left: 18px;
+  width: 80px;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul li input, body .content_wrap .content .shoppingcart .cart_list ul li input {
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul li img, body .content_wrap .content .shoppingcart .cart_list ul li img {
+  width: 60px;
+  height: 60px;
+}
+
+html .content_wrap .content .shoppingcart #checkall, body .content_wrap .content .shoppingcart #checkall {
+  width: 60px;
 }

@@ -25,11 +25,12 @@ html,body{
         .content{
             width: 1080px;
             margin: 0 auto;
-            padding: 165px;
+            // padding: 165px;
             // height: 800px;
             box-sizing: border-box;
             text-align: center;
             .tips{
+                padding: 163px;
                 img{
                 width: 208px;
                 height: 144px;
@@ -50,7 +51,70 @@ html,body{
                     box-sizing: border-box;
                 }
             }
-            
+            .shoppingcart{
+                width: 100%;
+                display: none;
+                height: 1200px;
+                margin: 0 auto;
+               .cart_head{
+                   width: 100%;
+                   height: 40px;
+                   background-color: #fff;
+                   margin: 10px 0;
+                   list-style: none;
+                   display: flex;
+                   justify-content: space-around;
+                   li{
+                       text-align: center;
+                       float: left;
+                       width: 180px;
+                       line-height: 40px;
+                       &:first-child{
+                           input{
+                               padding: 0;
+                               margin: 0;
+                               width: 15px;
+                           }
+                           width: 80px;
+                       }
+                   }
+               }
+               .cart_list{
+                   ul{
+                       display: flex;
+                       justify-content: space-around;
+                       align-items: center;
+                       height: 100px;
+                       background-color: #fff;
+                       margin-bottom: 10px;
+                       li{
+                        width: 180px;
+                        &:first-child{
+                            text-align: left;
+                            margin-left: 18px;
+                            
+                            width: 80px;
+                        }
+                           float: left;
+                           text-align: center;
+                           line-height: 100px;
+                           input{
+                               width: 20px;
+                               height: 20px;
+                               background-color: #fff;
+                               border: 1px solid;
+                           }
+                        img{
+                            width: 60px;
+                            height: 60px;
+                        }
+                       }
+                   }
+               }
+                #checkall{
+                    width: 60px;
+                }
+            }
         }
     }
 
