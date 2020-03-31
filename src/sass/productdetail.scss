@@ -18,14 +18,15 @@ html,body{
             }
             .list_data{
                 height: 548px;
-                width: 1080px;
+                width: 1080px;position: relative;
                 .pro_img{
                     width: 426px;
                     height: 548px;
                     border: 1px solid;
                     float: left;
-                    position: relative;
+                    
                     .srollpic{
+                        overflow: hidden;
                         position: absolute;
                         right: -426px;
                         top: 0;
@@ -33,6 +34,13 @@ html,body{
                         height: 400px;
                         z-index: 1;
                         display: none;
+                        img{
+                            width: 1200px;
+                            height: 1200px;
+                            position: absolute;
+                            left: 0;
+                            top: 100px;
+                        }
                     }
                     .bigpic{
                         position: relative;

@@ -16,14 +16,15 @@ html, body {
         font-size: 12px; }
       html .content_wrap .content .list_data, body .content_wrap .content .list_data {
         height: 548px;
-        width: 1080px; }
+        width: 1080px;
+        position: relative; }
         html .content_wrap .content .list_data .pro_img, body .content_wrap .content .list_data .pro_img {
           width: 426px;
           height: 548px;
           border: 1px solid;
-          float: left;
-          position: relative; }
+          float: left; }
           html .content_wrap .content .list_data .pro_img .srollpic, body .content_wrap .content .list_data .pro_img .srollpic {
+            overflow: hidden;
             position: absolute;
             right: -426px;
             top: 0;
@@ -31,6 +32,12 @@ html, body {
             height: 400px;
             z-index: 1;
             display: none; }
+            html .content_wrap .content .list_data .pro_img .srollpic img, body .content_wrap .content .list_data .pro_img .srollpic img {
+              width: 1200px;
+              height: 1200px;
+              position: absolute;
+              left: 0;
+              top: 100px; }
           html .content_wrap .content .list_data .pro_img .bigpic, body .content_wrap .content .list_data .pro_img .bigpic {
             position: relative;
             width: 426px;
