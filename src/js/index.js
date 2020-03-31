@@ -45,7 +45,7 @@ class Index {
     addEvent() {
        $(".row1 figure").click(function () {
            console.log($(this));
-           alert(1)
+           
          })
         var that=this;
         this.check();

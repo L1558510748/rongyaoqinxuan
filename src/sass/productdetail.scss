@@ -1,6 +1,7 @@
 html,body{
     padding: 0;
     margin: 0;
+    
     .content_wrap{
         width: 100%;
         background-color: white;
@@ -18,33 +19,31 @@ html,body{
             }
             .list_data{
                 height: 548px;
-                width: 1080px;position: relative;
+                width: 1080px;
                 .pro_img{
                     width: 426px;
                     height: 548px;
-                    border: 1px solid;
                     float: left;
-                    
-                    .srollpic{
+                    position: relative;
+                    .scrollpic{
                         overflow: hidden;
                         position: absolute;
-                        right: -426px;
-                        top: 0;
+                        left: 434px;
+                        top: 0px;
                         width: 400px;
                         height: 400px;
-                        z-index: 1;
                         display: none;
                         img{
-                            width: 1200px;
-                            height: 1200px;
                             position: absolute;
-                            left: 0;
-                            top: 100px;
+                            left: 0px;
+                            top: 0px;
+                            height: 848px;
+                            width: 848px;
                         }
                     }
                     .bigpic{
                         position: relative;
-                        width:426px;
+                        width:424px;
                         height:424px;
                         background-color: aqua;
                         margin-bottom: 10px;;
@@ -56,8 +55,8 @@ html,body{
                             position: absolute;
                             top: 0;
                             left: 0;
-                            width: 100px;
-                            height: 100px;
+                            width: 108px;
+                            height: 108px;
                             z-index: 1;
                             display: none;
                             cursor:move;

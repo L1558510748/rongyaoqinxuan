@@ -60,6 +60,7 @@ body header .backColor .head_info .user_info a .myorder {
 
 html header .backColor .head_info .logined,
 body header .backColor .head_info .logined {
+  width: 240px;
   float: right;
   display: none;
 }

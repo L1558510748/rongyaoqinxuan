@@ -16,31 +16,29 @@ html, body {
         font-size: 12px; }
       html .content_wrap .content .list_data, body .content_wrap .content .list_data {
         height: 548px;
-        width: 1080px;
-        position: relative; }
+        width: 1080px; }
         html .content_wrap .content .list_data .pro_img, body .content_wrap .content .list_data .pro_img {
           width: 426px;
           height: 548px;
           border: 1px solid;
-          float: left; }
-          html .content_wrap .content .list_data .pro_img .srollpic, body .content_wrap .content .list_data .pro_img .srollpic {
+          float: left;
+          position: relative; }
+          html .content_wrap .content .list_data .pro_img .scrollpic, body .content_wrap .content .list_data .pro_img .scrollpic {
             overflow: hidden;
             position: absolute;
-            right: -426px;
-            top: 0;
+            left: 434px;
+            top: 0px;
             width: 400px;
-            height: 400px;
-            z-index: 1;
-            display: none; }
-            html .content_wrap .content .list_data .pro_img .srollpic img, body .content_wrap .content .list_data .pro_img .srollpic img {
-              width: 1200px;
-              height: 1200px;
+            height: 400px; }
+            html .content_wrap .content .list_data .pro_img .scrollpic img, body .content_wrap .content .list_data .pro_img .scrollpic img {
               position: absolute;
-              left: 0;
-              top: 100px; }
+              left: 0px;
+              top: 0px;
+              height: 848px;
+              width: 848px; }
           html .content_wrap .content .list_data .pro_img .bigpic, body .content_wrap .content .list_data .pro_img .bigpic {
             position: relative;
-            width: 426px;
+            width: 424px;
             height: 424px;
             background-color: aqua;
             margin-bottom: 10px; }
@@ -51,8 +49,8 @@ html, body {
               position: absolute;
               top: 0;
               left: 0;
-              width: 100px;
-              height: 100px;
+              width: 108px;
+              height: 108px;
               z-index: 1;
               display: none;
               cursor: move;
