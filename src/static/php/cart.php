@@ -5,6 +5,7 @@ $goodsid = $_REQUEST['goodsid'];
 $num = $_REQUEST["num"];
 $price = $_REQUEST['price'];
 $imgsrc = $_REQUEST["imgsrc"];
+$goodsname=$_REQUEST['goodsname'];
 $sql = "SELECT * FROM cart WHERE user='" . $user . "'limit 0,1";
 $res1 = mysqli_query($link, $sql);
 $arr = mysqli_fetch_array($res1);
@@ -15,7 +16,7 @@ if ($arr['goodsid'] == $goodsid) {
 
     mysqli_query($link, $sql2);
 } else {
-    $sql = "INSERT  cart (`user`,`goodsid`,`num`,`price`,`imgsrc`) VALUES ('" . $user . "','" . $goodsid . "','" . $num . "','" . $price . "','" . $imgsrc . "')";
+    $sql = "INSERT  cart (`user`,`goodsid`,`num`,`price`,`imgsrc`,`goodsname`) VALUES ('" . $user . "','" . $goodsid . "','" . $num . "','" . $price . "','" . $imgsrc . "','".$goodsname."')";
     $res = mysqli_query($link, $sql);
 }
 

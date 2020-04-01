@@ -3,6 +3,7 @@ class Cart{
         this.quit=document.getElementById("quit");
         this.status=0;
         this.user="";
+        this.price=0;
         this.addEvent();
     }
     addEvent(){
@@ -12,8 +13,10 @@ class Cart{
           }
         this.check();
         this.init();
+       
         
     }
+   
     logout(){
         sessionStorage.removeItem("user");
         location.reload();
@@ -29,6 +32,7 @@ class Cart{
         }
     }
     init(){
+        var that=this;
         $.ajax({
             type: "get",
             url: "http://localhost/rongyaoqinxuan/src/static/php/cart2.php",
@@ -44,17 +48,33 @@ class Cart{
                 $(".shoppingcart").css("display","block");
                 var str="";
                 var k=1;
-                for(var i=0;i<response.length/5;i++){
+                for(var i=0;i<response.length/6;i++){
                     console.log(i)
-
-                    str+=`<div id="${response[i+k]}"><ul><li><input type='checkbox'></li><li><img src="${response[i+3+k]}"></li><li>${response[i+2+k]}</li><li><input type="button" value="-" id="reduce">${response[i+1+k]}<input type="button" value="+" id="increase"></li><li>555</li>
+                    var total=response[i+2+k]*response[i+1+k];
+                    str+=`<div id="${response[i+k]}"><ul><li><input type='checkbox'></li><li><span id="namespan"><img src="${response[i+3+k]}">${response[i+4+k]}</span></li><li id="price">${response[i+2+k]}</li><li><input type="button" value="-" id="reduce"><span id="goodnum">${response[i+1+k]}</span><input type="button" value="+" id="increase"></li><li id="total">${total}</li>
                 <li>删除</li></ul></div>`;
-                k=k+4;
+                k=k+5;
                 }
                 $(".cart_list").html(str)
+                $("#goodnum").html();
+                that.totalprice();
             }
         });
        
+    }
+    totalprice(){
+        //
+        $("#reduce").click(function () {
+            var num=$("#goodnum").html();
+            $("#goodnum").html(--num)
+            $("#total").html($("#goodnum").html()*$("#price").html())
+          })
+          $("#increase").click(function () {
+            var num=$("#goodnum").html();
+            $("#goodnum").html(++num)
+            $("#total").html($("#goodnum").html()*$("#price").html())
+          })
+          
     }
 
 }

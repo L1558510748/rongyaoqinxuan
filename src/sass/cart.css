@@ -98,6 +98,7 @@ html .content_wrap .content .shoppingcart .cart_list ul, body .content_wrap .con
 }
 
 html .content_wrap .content .shoppingcart .cart_list ul li, body .content_wrap .content .shoppingcart .cart_list ul li {
+  height: 100px;
   width: 180px;
   float: left;
   text-align: center;
@@ -117,7 +118,15 @@ html .content_wrap .content .shoppingcart .cart_list ul li input, body .content_
   border: 1px solid;
 }
 
-html .content_wrap .content .shoppingcart .cart_list ul li img, body .content_wrap .content .shoppingcart .cart_list ul li img {
+html .content_wrap .content .shoppingcart .cart_list ul li #namespan, body .content_wrap .content .shoppingcart .cart_list ul li #namespan {
+  font-size: 12px;
+  position: relative;
+}
+
+html .content_wrap .content .shoppingcart .cart_list ul li #namespan img, body .content_wrap .content .shoppingcart .cart_list ul li #namespan img {
+  position: absolute;
+  top: -20px;
+  left: -90px;
   width: 60px;
   height: 60px;
 }

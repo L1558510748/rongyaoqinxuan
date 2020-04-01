@@ -20,6 +20,8 @@ while($row=mysqli_fetch_array($res1)){
     $str.=',';
     $str.=$row['imgsrc'];
     $str.=',';
+    $str.=$row['goodsname'];
+    $str.=',';
 }
 substr($str,0,strlen($str)-1);
 
