@@ -52,29 +52,40 @@ class Cart{
                     console.log(i)
                     var total=response[i+2+k]*response[i+1+k];
                     str+=`<div id="${response[i+k]}"><ul><li><input type='checkbox'></li><li><span id="namespan"><img src="${response[i+3+k]}">${response[i+4+k]}</span></li><li id="price">${response[i+2+k]}</li><li><input type="button" value="-" id="reduce"><span id="goodnum">${response[i+1+k]}</span><input type="button" value="+" id="increase"></li><li id="total">${total}</li>
-                <li>删除</li></ul></div>`;
+                <li ><span id="delete">删除</span></li></ul></div>`;
                 k=k+5;
                 }
                 $(".cart_list").html(str)
                 $("#goodnum").html();
-                that.totalprice();
+                that.totalctrl();
             }
         });
        
     }
-    totalprice(){
+    totalctrl(){
         //
-        $("#reduce").click(function () {
-            var num=$("#goodnum").html();
-            $("#goodnum").html(--num)
-            $("#total").html($("#goodnum").html()*$("#price").html())
+        $("[id=reduce]").click(function () {
+            var num=$(this).parent().children("span").html()*1;
+            if(1<num){
+                num--;
+                $(this).parent().children("span").html(num)
+            $(this).parent().parent().children("#total").html(num*$(this).parent().parent().children("#price").html())
+            }
+            
           })
-          $("#increase").click(function () {
-            var num=$("#goodnum").html();
-            $("#goodnum").html(++num)
-            $("#total").html($("#goodnum").html()*$("#price").html())
+          $("[id=increase]").click(function () {
+            var num=$(this).parent().children("span").html()*1;
+                num++;
+                $(this).parent().children("span").html(num)
+            $(this).parent().parent().children("#total").html(num*$(this).parent().parent().children("#price").html())
+            
+        
           })
-          
+          $("[id=delete]").click(function () {
+              console.log($(this).parent().parent().parent().html())
+            $(this).parent().parent().parent().remove();
+            
+          })
     }
 
 }

@@ -89,14 +89,13 @@ html,body{
                        background-color: #fff;
                        margin-bottom: 10px;
                        li{
-                           height: 100px;
-                        width: 180px;
-                        &:first-child{
-                            text-align: left;
-                            margin-left: 18px;
-                            
-                            width: 80px;
-                        }
+                           &:first-child{
+                               text-align: left;
+                               margin-left: 18px;
+                               width: 80px;
+                            }
+                            height: 100px;
+                            width: 180px;
                            float: left;
                            text-align: center;
                            line-height: 100px;
@@ -106,6 +105,9 @@ html,body{
                                background-color: #fff;
                                border: 1px solid;
                            }
+                           #total{
+                            color: #fa4187;
+                        }
                            #namespan{
                                font-size: 12px;
                                position: relative;

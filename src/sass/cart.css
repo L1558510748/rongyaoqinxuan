@@ -118,6 +118,10 @@ html .content_wrap .content .shoppingcart .cart_list ul li input, body .content_
   border: 1px solid;
 }
 
+html .content_wrap .content .shoppingcart .cart_list ul li #total, body .content_wrap .content .shoppingcart .cart_list ul li #total {
+  color: #fa4187;
+}
+
 html .content_wrap .content .shoppingcart .cart_list ul li #namespan, body .content_wrap .content .shoppingcart .cart_list ul li #namespan {
   font-size: 12px;
   position: relative;
