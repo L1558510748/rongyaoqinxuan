@@ -51,7 +51,7 @@ exports.static = staticFn;
 function sassFn() {
     return gulp.src("./src/sass/**")
     .pipe(sass())
-    .pipe(gulp.dest("./dist/sass"))
+    .pipe(gulp.dest("./dist/css"))
   }
 exports.sass=sassFn;
 function serverFn() {

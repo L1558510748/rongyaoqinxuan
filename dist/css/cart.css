@@ -76,6 +76,12 @@ body {
                 padding: 0;
                 margin: 0;
                 width: 15px; }
+            html .content_wrap .content .shoppingcart .cart_head li #suborder,
+            body .content_wrap .content .shoppingcart .cart_head li #suborder {
+              width: 180px;
+              background-color: #fa4187;
+              color: #fff;
+              height: 40px; }
         html .content_wrap .content .shoppingcart .cart_list ul,
         body .content_wrap .content .shoppingcart .cart_list ul {
           display: flex;

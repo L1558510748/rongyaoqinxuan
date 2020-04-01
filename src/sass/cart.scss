@@ -1,49 +1,49 @@
-html,body{
+html,
+body {
     margin: 0;
     padding: 0;
-    header{
-        .container{
-        .head_nav{
-            display: flex;
-            justify-content: start;
-            align-items: center;
-            h2{
-            font-size: 26px;
-            width: 320px;
-            font-weight: normal;
-            text-decoration: none;
-            margin-left: 30px;
+    header {
+        .container {
+            .head_nav {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+                h2 {
+                    font-size: 26px;
+                    width: 320px;
+                    font-weight: normal;
+                    text-decoration: none;
+                    margin-left: 30px;
+                }
+            }
         }
-        }
-        
     }
-    }
-    .content_wrap{
+    .content_wrap {
         width: 100%;
         // height: 800px;
         box-sizing: border-box;
-        .content{
+        .content {
             width: 1080px;
             margin: 0 auto;
             // padding: 165px;
             // height: 800px;
             box-sizing: border-box;
             text-align: center;
-            .tips{
+            .tips {
                 padding: 163px;
-                img{
-                width: 208px;
-                height: 144px;
+                img {
+                    margin: auto;
+                    width: 208px;
+                    height: 144px;
                 }
-                button{
+                button {
                     height: 34px;
                     width: 78px;
-                    background-color:#fa4187;
+                    background-color: #fa4187;
                     color: white;
                     border-radius: 16px;
-                    
                 }
-                h5{
+                h5 {
                     font-size: 16px;
                     font-weight: normal;
                     color: #888;
@@ -51,87 +51,101 @@ html,body{
                     box-sizing: border-box;
                 }
             }
-            .shoppingcart{
+            .shoppingcart {
                 width: 100%;
                 display: none;
-                height: 1200px;
+                height: 600px;
+                overflow: auto;
                 margin: 0 auto;
-               .cart_head{
-                   width: 100%;
-                   height: 40px;
-                   background-color: #fff;
-                   margin: 10px 0;
-                   list-style: none;
-                   display: flex;
-                   justify-content: space-around;
-                   li{
-                       text-align: center;
-                       float: left;
-                       width: 180px;
-                       line-height: 40px;
-                       &:first-child{
-                           input{
-                               padding: 0;
-                               margin: 0;
-                               width: 15px;
-                           }
-                           width: 80px;
-                       }
-                       
-                   }
-               }
-               .cart_list{
-                   ul{
-                       display: flex;
-                       justify-content: space-around;
-                       align-items: center;
-                       height: 100px;
-                       background-color: #fff;
-                       margin-bottom: 10px;
-                       li{
-                           &:first-child{
-                               text-align: left;
-                               margin-left: 18px;
-                               width: 80px;
+                .cart_head {
+                    width: 100%;
+                    height: 40px;
+                    background-color: #fff;
+                    margin: 10px 0;
+                    list-style: none;
+                    display: flex;
+                    justify-content: space-around;
+                    li {
+                        text-align: center;
+                        float: left;
+                        width: 180px;
+                        line-height: 40px;
+                        &:first-child {
+                            input {
+                                padding: 0;
+                                margin: 0;
+                                width: 15px;
+                            }
+                            width: 80px;
+                        }
+                        #suborder{
+                            width: 180px;
+                            background-color:#fa4187 ;
+                            color: #fff;
+                            height: 40px;
+                        }
+                    }
+                }
+                .cart_list {
+                    ul {
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: 100px;
+                        background-color: #fff;
+                        margin-bottom: 10px;
+                        li {
+                            &:first-child {
+                                text-align: left;
+                                margin-left: 18px;
+                                width: 80px;
                             }
                             height: 100px;
                             width: 180px;
-                           float: left;
-                           text-align: center;
-                           line-height: 100px;
-                           input{
-                               width: 20px;
-                               height: 20px;
-                               background-color: #fff;
-                               border: 1px solid;
-                           }
-                           #total{
-                            color: #fa4187;
+                            float: left;
+                            text-align: center;
+                            line-height: 100px;
+                            input {
+                                width: 20px;
+                                height: 20px;
+                                background-color: #fff;
+                                border: 1px solid;
+                            }
+                            #total {
+                                color: #fa4187;
+                            }
+                            #namespan {
+                                height: 100px;
+                                width: 120px;
+                                display: inline-block;
+                                font-size: 12px;
+                                //    overflow: hidden;
+                                position: relative;
+                                img {
+                                    position: absolute;
+                                    top: 20px;
+                                    left: -70px;
+
+                                    width: 60px;
+                                    height: 60px;
+                                }
+                                b {
+                                    display: inline-block;
+                                    width: 120px;
+                                    height: 100px;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+
+                                }
+                            }
                         }
-                           #namespan{
-                               font-size: 12px;
-                               position: relative;
-                               img{
-                                   position: absolute;
-                                   top: -20px;
-                                   left: -90px;
-                                   
-                                   width: 60px;
-                                   height: 60px;
-                               }
-                           }
-                       }
-                   }
-               }
-                #checkall{
-                    width: 60px;
+                    }
                 }
             }
         }
     }
 
-
-    footer{
+    footer {
         // position: fixed;
         // bottom: 0;
     }

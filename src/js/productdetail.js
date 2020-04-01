@@ -47,7 +47,6 @@ class Detail {
             $(".bigpic").find("img").attr("src",imgurl)
             $(".scrollpic").find("img").attr("src",imgurl)
           });
-          
     }
     cart(){
         $.ajax({
@@ -99,9 +98,8 @@ class Detail {
         $(".hoverpic").css("top",t+"px");
         var x=l/($(".bigpic").width()-$(".hoverpic").width());
         var y=t/($(".bigpic").height()-$(".hoverpic").height());
-        $("#sc1").css("left",($(".scrollpic").width()-$("#sc1").width())*x+"px")
-        $("#sc1").css("top",($(".scrollpic").height()-$("#sc1").height())*y+"px")
-        
+        $("#sc1").css("left",($(".scrollpic").width()-$("#sc1").width())*x+"px");
+        $("#sc1").css("top",($(".scrollpic").height()-$("#sc1").height())*y+"px");
     }
     out(){
         $(".hoverpic").css("display","none");

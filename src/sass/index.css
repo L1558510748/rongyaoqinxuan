@@ -288,6 +288,7 @@ body .content .goods_list .el_row .row1 figure p {
   width: 180px;
   height: 30px;
   text-align: center;
+  overflow: hidden;
 }
 
 html .content .goods_list .el_row .row1 figure p #nowprice,
@@ -313,6 +314,7 @@ body .content .goods_list .el_row .row1 figure figcaption {
 html .content .goods_list .el_row .row1 figure figcaption p,
 body .content .goods_list .el_row .row1 figure figcaption p {
   line-height: 30px;
+  overflow: hidden;
 }
 
 html .floor_list,

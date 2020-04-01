@@ -3,7 +3,10 @@ class Cart{
         this.quit=document.getElementById("quit");
         this.status=0;
         this.user="";
+        this.all=0;
         this.price=0;
+        this.data="";
+        this.sum=0;
         this.addEvent();
     }
     addEvent(){
@@ -42,16 +45,25 @@ class Cart{
                response= response.split(",");
                 console.log(response)
                 response.pop()
-                console.log(response)
+                console.log(response.length)
+                that.data=response;
                 this.status=1;
-                $(".tips").css("display","none");
+                if(0<response.length){
+                    $(".tips").css("display","none");
                 $(".shoppingcart").css("display","block");
+                console.log(1111)
+               
+                // $(".tips").css("display","none");
+                // $(".shoppingcart").css("display","block");
                 var str="";
                 var k=1;
+                
                 for(var i=0;i<response.length/6;i++){
                     console.log(i)
+                    
                     var total=response[i+2+k]*response[i+1+k];
-                    str+=`<div id="${response[i+k]}"><ul><li><input type='checkbox'></li><li><span id="namespan"><img src="${response[i+3+k]}">${response[i+4+k]}</span></li><li id="price">${response[i+2+k]}</li><li><input type="button" value="-" id="reduce"><span id="goodnum">${response[i+1+k]}</span><input type="button" value="+" id="increase"></li><li id="total">${total}</li>
+                    that.sum+=total;
+                    str+=`<div id="${response[i+k]}"><ul><li><input type="checkbox"   ></li><li><span id="namespan"><img src="${response[i+3+k]}"><b>${response[i+4+k]}</b></span></li><li id="price">${response[i+2+k]}</li><li><input type="button" value="-" id="reduce"><span id="goodnum">${response[i+1+k]}</span><input type="button" value="+" id="increase"></li><li id="total" class="total">${total}</li>
                 <li ><span id="delete">删除</span></li></ul></div>`;
                 k=k+5;
                 }
@@ -59,17 +71,40 @@ class Cart{
                 $("#goodnum").html();
                 that.totalctrl();
             }
+            }
         });
        
     }
     totalctrl(){
-        //
+        var that=this;
+        var sum=0
+        for(var i=0;i<$(".total").length;i++){
+            sum+=$(".total").eq(i).html()*1;
+            console.log($(".total").eq(i).html()*1)
+        }
+        
+        $("#allprice").html(sum);
         $("[id=reduce]").click(function () {
             var num=$(this).parent().children("span").html()*1;
             if(1<num){
                 num--;
-                $(this).parent().children("span").html(num)
+                $(this).parent().children("span").html(num);
+                
+            //     var original=$(this).parent().parent().children("#total").html();
+            //     var temp=num*$(this).parent().parent().children("#price").html()
+
+            // $(this).parent().parent().children("#total").html(temp)
+            // that.sum=that.sum-original+temp;
+            // $("#allprice").html(that.sum);
+
             $(this).parent().parent().children("#total").html(num*$(this).parent().parent().children("#price").html())
+            var sum=0;
+            for(var i=0;i<$(".total").length;i++){
+                sum+=$(".total").eq(i).html()*1;
+                console.log($(".total").eq(i).html()*1)
+            }
+            
+            $("#allprice").html(sum);
             }
             
           })
@@ -78,7 +113,13 @@ class Cart{
                 num++;
                 $(this).parent().children("span").html(num)
             $(this).parent().parent().children("#total").html(num*$(this).parent().parent().children("#price").html())
+            var sum=0;
+            for(var i=0;i<$(".total").length;i++){
+                sum+=$(".total").eq(i).html()*1;
+                console.log($(".total").eq(i).html()*1)
+            }
             
+            $("#allprice").html(sum);
         
           })
           $("[id=delete]").click(function () {
@@ -86,6 +127,40 @@ class Cart{
             $(this).parent().parent().parent().remove();
             
           })
+          
+          $("[id=checkall]").click(function () {
+              if(that.all==0){
+                  
+                  that.all=1;
+                  console.log($("[type=checkbox]").length)
+                    for(var i=0;i<$("[type=checkbox]").length;i++){
+                        $("[type=checkbox]")[i].checked=true;
+                    }
+              }
+              else{
+                
+                that.all=0
+                for(var i=0;i<$("[type=checkbox]").length;i++){
+                    $("[type=checkbox]")[i].checked=false;
+                }
+              }
+            })
+            $("#deleteall").click(function () {
+                if(that.all==1){
+                    $(".shoppingcart").remove();
+                    console.log(that.data[0])
+                    $.ajax({
+                        type: "post",
+                        url: "http://localhost/rongyaoqinxuan/src/static/php/cart3.php",
+                        data: {user:that.data[0]},
+                        
+                    });
+                    that.status=0;
+                    console.log(222)
+                    $(".shoppingcart").css("display","none");
+                    $(".tips").css("display","block")
+                }
+              })
     }
 
 }
