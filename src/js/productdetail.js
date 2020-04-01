@@ -34,7 +34,7 @@ class Detail {
         $(".bigpic").mouseout(function () { 
             that.out();
         });
-        var that=this;
+        
         this.getdata();
         $(this.reduce).click(function () {
             if(0<that.num)
@@ -123,23 +123,72 @@ class Detail {
     }
     getdata(){
         var that=this;
-       
-        $.getJSON("http://localhost/rongyaoqinxuan/src/static/goods.json",
+       var mark=0;
+       if(mark==0){
+           $.getJSON("http://localhost/rongyaoqinxuan/src/static/goods.json",
             function (data) {
                 // that.data=data;
+                console.log(data)
                 for(var k=0;k<data.length;k++){
                    
                     if(data[k].goods_id===that.id){
+                        
                         that.index=k;
                         console.log(k);
                         that.data=data[k]
                         that.init();
 
-                        break;
+                        return;
                     }
                 }
+                mark=1;
+                console.log("qqq")
             }
         );
+       }
+       if(mark==0){
+        $.getJSON("http://localhost/rongyaoqinxuan/src/static/zhihui.json",
+            function (data) {
+                // that.data=data;
+                console.log(data)
+                for(var k=0;k<data.length;k++){
+                   
+                    if(data[k].goods_id===that.id){
+                        
+                        that.index=k;
+                        console.log(k);
+                        that.data=data[k]
+                        that.init();
+
+                        return ;
+                    }
+                }
+                mark=2;
+            }
+        );
+       }
+       if(mark==0){
+        $.getJSON("http://localhost/rongyaoqinxuan/src/static/jingpin.json",
+        function (data) {
+            // that.data=data;
+            console.log(data)
+            for(var k=0;k<data.length;k++){
+               
+                if(data[k].goods_id===that.id){
+                    
+                    that.index=k;
+                    console.log(k);
+                    that.data=data[k]
+                    that.init();
+
+                    return ;
+                }
+            }
+            mark=3;
+        }
+    );
+       }
+        
         $("#product_name").html()
     }
     init(){

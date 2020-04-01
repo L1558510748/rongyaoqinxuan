@@ -38,41 +38,41 @@ class Index {
     constructor() {
         this.box = $(".box");
         this.top = $("#fixed_top");
-        this.quit=document.getElementById("quit");
-        
+        this.quit = document.getElementById("quit");
+
         this.addEvent();
     }
     addEvent() {
-       $(".row1 figure").click(function () {
-           console.log($(this));
-           
-         })
-        var that=this;
+        $(".row1 figure").click(function () {
+            console.log($(this));
+
+        })
+        var that = this;
         this.check();
-        this.quit.onclick=function () {
+        this.quit.onclick = function () {
             that.exit();
-          }
+        }
         onscroll = this.pagescroll;
         $(this.top).click(this.scrolltop);
         this.boxscroll();
         this.list();
         this.init();
     }
-    exit(){
+    exit() {
         sessionStorage.removeItem("user");
         location.reload();
     }
-    check(){
-        var user=sessionStorage.getItem("user");
-        if(user){
+    check() {
+        var user = sessionStorage.getItem("user");
+        if (user) {
             console.log(JSON.parse(user).sucMsg)
-            $(".user_info").css("display","none");
-            $(".logined").css("display","block");
+            $(".user_info").css("display", "none");
+            $(".logined").css("display", "block");
             $("#username").html(JSON.parse(user).sucMsg)
         }
     }
-    scrolltop(){
-        $("html,body").animate({scrollTop:'0'},500);
+    scrolltop() {
+        $("html,body").animate({ scrollTop: '0' }, 500);
         // return false
     }
     pagescroll() {
@@ -106,33 +106,76 @@ class Index {
             })
         })
     }
-    init(){
-        var that=this;
+    init() {
+        var that = this;
         $.getJSON("http://localhost/rongyaoqinxuan/src/static/goods.json",
             function (data) {
-                console.log(data)
-                var str1="";
-                
-                for(var i=0;i<8;i++){
+                // console.log(data)
+                var str1 = "";
+
+                for (var i = 0; i < 8; i++) {
                     // if(i<3){
-                        str1+=`<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    str1 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
                     <figcaption><p class="yc">${data[i].name}</p>
                     <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
                     </figure>`;
-                    
+
                 }
-                $(".row1").html(str1);
+                $(".row1").eq(0).html(str1);
+
+                $(".row1").eq(2).html(str1);
                 that.figclick();
             }
         );
-       
+        $.getJSON("http://localhost/rongyaoqinxuan/src/static/zhihui.json",
+            function (data) {
+                var str2 = "";
+
+                for (var i = 0; i < 8; i++) {
+                    // if(i<3){
+                    str2 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                <figcaption><p class="yc">${data[i].name}</p>
+                <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
+                </figure>`;
+
+                }
+                $(".row2").html(str2);
+                that.figclick();
+            }
+        );
+        $.getJSON("http://localhost/rongyaoqinxuan/src/static/jingpin.json",
+            function (data) {
+                var str3 = "";
+
+                for (var i = 0; i < 8; i++) {
+                    // if(i<3){
+                    str3 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                <figcaption><p class="yc">${data[i].name}</p>
+                <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
+                </figure>`;
+
+                }
+                $(".row3").html(str3);
+                that.figclick();
+            }
+        );
     }
-    figclick(){
+    figclick() {
         $(".row1").children("figure").click(function () {
-            var gid=($(this).attr("id"));
+            var gid = ($(this).attr("id"));
             console.log(gid)
-            $(window).attr('location',"./html/productdetail.html?id="+gid)
-          })
+            $(window).attr('location', "./html/productdetail.html?id=" + gid)
+        })
+        $(".row2").children("figure").click(function () {
+            var gid = ($(this).attr("id"));
+            console.log(gid)
+            $(window).attr('location', "./html/productdetail.html?id=" + gid)
+        })
+        $(".row3").children("figure").click(function () {
+            var gid = ($(this).attr("id"));
+            console.log(gid)
+            $(window).attr('location', "./html/productdetail.html?id=" + gid)
+        })
     }
 }
 new Index();
