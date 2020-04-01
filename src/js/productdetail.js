@@ -6,12 +6,14 @@ class Detail {
         this.goodsid="";
         this.user="";
         this.num=1;
+        this.box = $(".box");
         this.index=0;
         this.data={};
         this.quit=document.getElementById("quit");
         this.addEvent();
     }
     addEvent() {
+        this.boxscroll();
         this.check();
         var that=this;
         $("#cart").click(function () {
@@ -47,6 +49,20 @@ class Detail {
             $(".bigpic").find("img").attr("src",imgurl)
             $(".scrollpic").find("img").attr("src",imgurl)
           });
+    }
+    boxscroll() {
+        var t = 0;
+        
+        setInterval(() => {
+            // console.log($(".box>ul>li").length)
+            if (t == $(".box>ul>li").length) {
+                t = 0;
+                $(".box").children("ul").css("top", 0)
+            } else {
+                $(".box").children("ul").animate({ top: -36 * t + "px" }, 500)
+                t++;
+            }
+        }, 3000);
     }
     cart(){
         $.ajax({

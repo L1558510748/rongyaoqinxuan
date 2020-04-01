@@ -112,8 +112,8 @@ class Index {
             function (data) {
                 console.log(data)
                 var str1="";
-                var str2="";
-                for(var i=0;i<data.length;i++){
+                
+                for(var i=0;i<8;i++){
                     // if(i<3){
                         str1+=`<figure id="${data[i].goods_id}"><img src=${data[i].img}>
                     <figcaption><p class="yc">${data[i].name}</p>
@@ -128,7 +128,7 @@ class Index {
        
     }
     figclick(){
-        $("figure").click(function () {
+        $(".row1").children("figure").click(function () {
             var gid=($(this).attr("id"));
             console.log(gid)
             $(window).attr('location',"./html/productdetail.html?id="+gid)
