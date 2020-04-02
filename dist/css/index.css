@@ -141,13 +141,14 @@ body {
     background-color: #f7f7f7; }
     html .content .goods_list,
     body .content .goods_list {
-      height: 724px;
+      height: 100%;
       width: 1080px;
       margin: auto;
       margin-top: 20px;
       box-sizing: border-box; }
       html .content .goods_list .title_box,
       body .content .goods_list .title_box {
+        margin-top: 10px;
         height: 30px;
         width: 1080px;
         display: flex;
@@ -181,8 +182,10 @@ body {
         width: 1080px;
         height: 688px;
         box-sizing: border-box; }
-        html .content .goods_list .el_row .row1 figure,
-        body .content .goods_list .el_row .row1 figure {
+        html .content .goods_list .el_row .row1 figure, html .content .goods_list .el_row .row2 figure, html .content .goods_list .el_row .row3 figure,
+        body .content .goods_list .el_row .row1 figure,
+        body .content .goods_list .el_row .row2 figure,
+        body .content .goods_list .el_row .row3 figure {
           width: 204px;
           float: left;
           height: 324px;
@@ -190,45 +193,63 @@ body {
           padding: 5px;
           margin: 10px 6px;
           box-sizing: border-box; }
-          html .content .goods_list .el_row .row1 figure:hover,
-          body .content .goods_list .el_row .row1 figure:hover {
+          html .content .goods_list .el_row .row1 figure:hover, html .content .goods_list .el_row .row2 figure:hover, html .content .goods_list .el_row .row3 figure:hover,
+          body .content .goods_list .el_row .row1 figure:hover,
+          body .content .goods_list .el_row .row2 figure:hover,
+          body .content .goods_list .el_row .row3 figure:hover {
             box-shadow: 0px 0px 5px 5px rgba(204, 204, 204, 0.5); }
-          html .content .goods_list .el_row .row1 figure:nth-child(1),
-          body .content .goods_list .el_row .row1 figure:nth-child(1) {
+          html .content .goods_list .el_row .row1 figure:nth-child(1), html .content .goods_list .el_row .row2 figure:nth-child(1), html .content .goods_list .el_row .row3 figure:nth-child(1),
+          body .content .goods_list .el_row .row1 figure:nth-child(1),
+          body .content .goods_list .el_row .row2 figure:nth-child(1),
+          body .content .goods_list .el_row .row3 figure:nth-child(1) {
             width: 636px;
             height: 324px;
             padding: 0px; }
-            html .content .goods_list .el_row .row1 figure:nth-child(1) img,
-            body .content .goods_list .el_row .row1 figure:nth-child(1) img {
+            html .content .goods_list .el_row .row1 figure:nth-child(1) img, html .content .goods_list .el_row .row2 figure:nth-child(1) img, html .content .goods_list .el_row .row3 figure:nth-child(1) img,
+            body .content .goods_list .el_row .row1 figure:nth-child(1) img,
+            body .content .goods_list .el_row .row2 figure:nth-child(1) img,
+            body .content .goods_list .el_row .row3 figure:nth-child(1) img {
               width: 636px;
               height: 324px; }
-          html .content .goods_list .el_row .row1 figure img,
-          body .content .goods_list .el_row .row1 figure img {
+          html .content .goods_list .el_row .row1 figure img, html .content .goods_list .el_row .row2 figure img, html .content .goods_list .el_row .row3 figure img,
+          body .content .goods_list .el_row .row1 figure img,
+          body .content .goods_list .el_row .row2 figure img,
+          body .content .goods_list .el_row .row3 figure img {
             width: 194px;
             height: 194px;
             margin-bottom: 40px; }
-          html .content .goods_list .el_row .row1 figure p,
-          body .content .goods_list .el_row .row1 figure p {
+          html .content .goods_list .el_row .row1 figure p, html .content .goods_list .el_row .row2 figure p, html .content .goods_list .el_row .row3 figure p,
+          body .content .goods_list .el_row .row1 figure p,
+          body .content .goods_list .el_row .row2 figure p,
+          body .content .goods_list .el_row .row3 figure p {
             width: 180px;
             height: 30px;
             text-align: center;
             overflow: hidden; }
-            html .content .goods_list .el_row .row1 figure p #nowprice,
-            body .content .goods_list .el_row .row1 figure p #nowprice {
+            html .content .goods_list .el_row .row1 figure p #nowprice, html .content .goods_list .el_row .row2 figure p #nowprice, html .content .goods_list .el_row .row3 figure p #nowprice,
+            body .content .goods_list .el_row .row1 figure p #nowprice,
+            body .content .goods_list .el_row .row2 figure p #nowprice,
+            body .content .goods_list .el_row .row3 figure p #nowprice {
               color: #ff00d0;
               font-size: 18px; }
-            html .content .goods_list .el_row .row1 figure p #beforeprice,
-            body .content .goods_list .el_row .row1 figure p #beforeprice {
+            html .content .goods_list .el_row .row1 figure p #beforeprice, html .content .goods_list .el_row .row2 figure p #beforeprice, html .content .goods_list .el_row .row3 figure p #beforeprice,
+            body .content .goods_list .el_row .row1 figure p #beforeprice,
+            body .content .goods_list .el_row .row2 figure p #beforeprice,
+            body .content .goods_list .el_row .row3 figure p #beforeprice {
               font-size: 12px;
               color: #888; }
-          html .content .goods_list .el_row .row1 figure figcaption,
-          body .content .goods_list .el_row .row1 figure figcaption {
+          html .content .goods_list .el_row .row1 figure figcaption, html .content .goods_list .el_row .row2 figure figcaption, html .content .goods_list .el_row .row3 figure figcaption,
+          body .content .goods_list .el_row .row1 figure figcaption,
+          body .content .goods_list .el_row .row2 figure figcaption,
+          body .content .goods_list .el_row .row3 figure figcaption {
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-direction: column; }
-            html .content .goods_list .el_row .row1 figure figcaption p,
-            body .content .goods_list .el_row .row1 figure figcaption p {
+            html .content .goods_list .el_row .row1 figure figcaption p, html .content .goods_list .el_row .row2 figure figcaption p, html .content .goods_list .el_row .row3 figure figcaption p,
+            body .content .goods_list .el_row .row1 figure figcaption p,
+            body .content .goods_list .el_row .row2 figure figcaption p,
+            body .content .goods_list .el_row .row3 figure figcaption p {
               line-height: 30px;
               overflow: hidden; }
   html .floor_list,

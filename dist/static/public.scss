@@ -239,6 +239,7 @@ body {
         img {
           height: 105px;
           width: 105px;
+          margin: auto;
           margin-bottom: 18px;
         }
         .foot_msg {
@@ -289,13 +290,17 @@ body {
         justify-content: space-around;
         align-content: center;
         li {
+          text-align: center;
           img {
+            margin: auto;
             width: 25px;
             height: 25px;
           }
         }
         #fixed_code {
             position: relative;
+            text-align: center;
+            
             &:hover .hover_info{
                 // display: block;
                 width: 100px;

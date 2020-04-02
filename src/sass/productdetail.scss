@@ -90,15 +90,16 @@ html,body{
                     flex-direction: column;
                     justify-content: space-around;
                     align-items: flex-start;
-                    // .goods_name{
-                    //     font-size: 22px;
-                    //     line-height: 22px;
+                    .goods_name{
+                        font-size: 22px;
+                        line-height: 22px;
 
-                    // }
-                    // .goods_price{
-                    //     height: 54px;
-                    //     padding: 15px;
-                    // }
+                    }
+                    #price{
+                        height: 54px;
+                        padding: 15px;
+                        color: #fa4187;
+                    }
                     span{
                         display: inline-block;
                         width: 60px;

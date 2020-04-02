@@ -1,0 +1,62 @@
+html, body {
+  padding: 0;
+  margin: 0; }
+
+html .content, body .content {
+  width: 1080px;
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  margin: 0 auto; }
+
+html .content .list_nav, body .content .list_nav {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 12px; }
+
+html .content .el_row, body .content .el_row {
+  width: 1080px;
+  height: 1100px; }
+
+html .content .el_row figure, body .content .el_row figure {
+  width: 204px;
+  float: left;
+  height: 324px;
+  background-color: #fff;
+  padding: 5px;
+  margin: 10px 6px;
+  box-sizing: border-box; }
+
+html .content .el_row figure:hover, body .content .el_row figure:hover {
+  box-shadow: 0px 0px 5px 5px rgba(204, 204, 204, 0.5); }
+
+html .content .el_row figure img, body .content .el_row figure img {
+  width: 194px;
+  height: 194px;
+  margin-bottom: 40px; }
+
+html .content .el_row figure p, body .content .el_row figure p {
+  width: 180px;
+  height: 30px;
+  text-align: center;
+  overflow: hidden; }
+
+html .content .el_row figure p #nowprice, body .content .el_row figure p #nowprice {
+  color: #ff00d0;
+  font-size: 18px; }
+
+html .content .el_row figure p #beforeprice, body .content .el_row figure p #beforeprice {
+  font-size: 12px;
+  color: #888; }
+
+html .content .el_row figure figcaption, body .content .el_row figure figcaption {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column; }
+
+html .content .el_row figure figcaption p, body .content .el_row figure figcaption p {
+  line-height: 30px;
+  overflow: hidden; }

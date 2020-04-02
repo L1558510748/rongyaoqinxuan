@@ -145,7 +145,7 @@ body {
     box-sizing: border-box;
     background-color: rgb(247, 247, 247);
     .goods_list {
-      height: 724px;
+      height: 100%;
       width: 1080px;
       margin: auto;
       // margin: 28px auto;
@@ -154,6 +154,7 @@ body {
       box-sizing: border-box;
 
       .title_box {
+        margin-top: 10px;
         height: 30px;
         width: 1080px;
         display: flex;
@@ -188,7 +189,7 @@ body {
         width: 1080px;
         height: 688px;
         box-sizing: border-box;
-        .row1 {
+        .row1, .row2, .row3{
          
         
           figure {

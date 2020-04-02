@@ -311,6 +311,7 @@ html footer .foot .foot_box img,
 body footer .foot .foot_box img {
   height: 105px;
   width: 105px;
+  margin: auto;
   margin-bottom: 18px;
 }
 
@@ -368,8 +369,14 @@ body .side_help ul {
   align-content: center;
 }
 
+html .side_help ul li,
+body .side_help ul li {
+  text-align: center;
+}
+
 html .side_help ul li img,
 body .side_help ul li img {
+  margin: auto;
   width: 25px;
   height: 25px;
 }
@@ -377,6 +384,7 @@ body .side_help ul li img {
 html .side_help ul #fixed_code,
 body .side_help ul #fixed_code {
   position: relative;
+  text-align: center;
 }
 
 html .side_help ul #fixed_code:hover .hover_info,

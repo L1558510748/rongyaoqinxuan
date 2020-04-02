@@ -92,6 +92,15 @@ html .content_wrap .content .list_data .pro_info, body .content_wrap .content .l
   justify-content: space-around;
   align-items: flex-start; }
 
+html .content_wrap .content .list_data .pro_info .goods_name, body .content_wrap .content .list_data .pro_info .goods_name {
+  font-size: 22px;
+  line-height: 22px; }
+
+html .content_wrap .content .list_data .pro_info #price, body .content_wrap .content .list_data .pro_info #price {
+  height: 54px;
+  padding: 15px;
+  color: #fa4187; }
+
 html .content_wrap .content .list_data .pro_info span, body .content_wrap .content .list_data .pro_info span {
   display: inline-block;
   width: 60px;
