@@ -84,7 +84,7 @@ class Cart {
         var sum = 0
         for (var i = 0; i < $(".total").length; i++) {
             sum += $(".total").eq(i).html() * 1;
-            console.log($(".total").eq(i).html() * 1)
+            
         }
 
         $("#allprice").html(sum);
@@ -93,21 +93,21 @@ class Cart {
             if (1 < num) {
                 num--;
                 $(this).parent().children("span").html(num);
-
-                //     var original=$(this).parent().parent().children("#total").html();
-                //     var temp=num*$(this).parent().parent().children("#price").html()
-
-                // $(this).parent().parent().children("#total").html(temp)
-                // that.sum=that.sum-original+temp;
-                // $("#allprice").html(that.sum);
-
                 $(this).parent().parent().children("#total").html(num * $(this).parent().parent().children("#price").html())
                 var sum = 0;
                 for (var i = 0; i < $(".total").length; i++) {
                     sum += $(".total").eq(i).html() * 1;
-                    console.log($(".total").eq(i).html() * 1)
+                    
                 }
-
+                $.ajax({
+                    type: "post",
+                    url: "http://localhost/rongyaoqinxuan/src/static/php/cart4.php",
+                    data: {type:1,
+                        user:that.user,
+                        goodid:$(this).parent().parent().parent().attr("id"),
+                        num:num},
+                    
+                });
                 $("#allprice").html(sum);
             }
 
@@ -120,16 +120,35 @@ class Cart {
             var sum = 0;
             for (var i = 0; i < $(".total").length; i++) {
                 sum += $(".total").eq(i).html() * 1;
-                console.log($(".total").eq(i).html() * 1)
+                
             }
-
+            $.ajax({
+                type: "post",
+                url: "http://localhost/rongyaoqinxuan/src/static/php/cart4.php",
+                data: {type:1,
+                    user:that.user,
+                    goodid:$(this).parent().parent().parent().attr("id"),
+                    num:num},
+                
+            });
             $("#allprice").html(sum);
 
         })
         $("[id=delete]").click(function () {
             console.log($(this).parent().parent().parent().html())
             $(this).parent().parent().parent().remove();
-
+            console.log($(this).parent().parent().parent().attr("id"))
+            console.log(that.user)
+            $.ajax({
+                type: "post",
+                url: "http://localhost/rongyaoqinxuan/src/static/php/cart4.php",
+                data: {type:0,
+                user:that.user,
+                goodid:$(this).parent().parent().parent().attr("id")},
+                success: function (response) {
+                    
+                }
+            });
         })
 
         $("[id=checkall]").click(function () {
@@ -160,7 +179,6 @@ class Cart {
 
                 });
                 that.status = 0;
-                console.log(222)
                 $(".shoppingcart").css("display", "none");
                 $(".tips").css("display", "block")
             }

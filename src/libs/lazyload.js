@@ -9,7 +9,7 @@ function lazyImg(elems){
             arr.splice(i,1);
             // 因为在数组的遍历中，改变了数组的长度，为了能继续正常拿到数组的其他数据，要根据情况实际修改i的值
             i--;
-            console.log(11)
+            
         }
     }
 }
