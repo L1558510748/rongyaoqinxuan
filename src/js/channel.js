@@ -2,14 +2,20 @@ class Channel {
     constructor() {
         this.id = this.getUrlParam("id");
         this.url="";
+        this.imgs="";
         this.addEvent();
     }
     addEvent() {
+        var that=this;
         this.boxscroll();
         this.init();
         this.check();
         this.id=this.getUrlParam("id");
-        console.log(this.id)
+        onscroll = function(){
+
+            lazyImg(that.imgs);
+    
+            }
     }
     boxscroll() {
         var t = 0;
@@ -45,7 +51,7 @@ class Channel {
 
                 for (var i = 0; i < data.length; i++) {
                     
-                    str1 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    str1 += `<figure id="${data[i].goods_id}"><img lazy=${data[i].img} class="lazy">
                             <figcaption><p class="yc">${data[i].name}</p>
                             <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
                             </figure>`;
@@ -53,6 +59,9 @@ class Channel {
                 }
                 $(".el_row").html(str1);
                 // console.log(str1)
+                that.imgs=document.querySelectorAll(".lazy")
+                console.log(that.imgs.length)
+                lazyImg(that.imgs);
                 that.figclick();
             }
         );

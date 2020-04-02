@@ -1,63 +1,49 @@
-// $(document).ready(function () {
-//     var t = 0;
-//     setInterval(() => {
-//         if (t == $(".box>ul>li").length) {
-//             t = 0;
-//             $(".box>ul").css("top", 0)
-//         } else {
-//             $(".box>ul").animate({ top: -36 * t + "px" },500)
-//             t++;
-//         }
-//     }, 3000);
-//     $(".list").children("li").click(function(){
-//         $(this).addClass("active").siblings().removeClass("active");
-//         $("html").animate({
-//             scrollTop:$(".floor").eq($(this).index()).offset().top
-//         })
-//     })
-//     $("#fixed_top").css("display","none");
-//     $("#fixed_top").click(function(e){
-//         $("body,html").animate({scrollTop:'0'},500);
-//         return false
-//     })
-//     onscroll=function () {
-//         console.log($(document).scrollTop())
-//         if(200<$(document).scrollTop()){
-//             $(".floor_list").css("right","0px");
-//             $("#fixed_top").css("visibility","visible");
-//             $("#fixed_top").fadeIn(500);           
-//         }
-//         else{
-//             $(".floor_list").css("right","-86px");
-//             $("#fixed_top").fadeOut(500);
-//             console.log("width"+$(".floor_list").width())
-//         }
-//       }
-// })
 class Index {
     constructor() {
         this.box = $(".box");
         this.top = $("#fixed_top");
         this.quit = document.getElementById("quit");
-
+        this.imgs="";
+			this.clientH=document.documentElement.clientHeight;
         this.addEvent();
     }
     addEvent() {
+        var that=this;
         $(".row1 figure").click(function () {
             console.log($(this));
 
         })
+        onscroll = function(){
+
+                that.pagescroll();
+                lazyImg(that.imgs);
+        
+                }
         var that = this;
         this.check();
         this.quit.onclick = function () {
             that.exit();
         }
-        onscroll = this.pagescroll;
+        this.init();
+        
         $(this.top).click(this.scrolltop);
         this.boxscroll();
         this.list();
-        this.init();
+        
     }
+    // lazyImg(imgs){
+        
+    //     var arr=Array.from(imgs);
+    //     var scrollT=document.documentElement.scrollTop;
+    //     for(var i=0;i<arr.length;i++){
+    //         if(arr[i].offsetTop - 100 < this.clientH + scrollT){
+    //             arr[i].src=arr[i].getAttribute("lazy");
+    //         arr.splice(i,1);
+    //         i--;
+    //         console.log("lazy")
+    //         }
+    //     }
+    // }
     exit() {
         sessionStorage.removeItem("user");
         location.reload();
@@ -115,15 +101,15 @@ class Index {
 
                 for (var i = 0; i < 8; i++) {
                     // if(i<3){
-                    str1 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    str1 += `<figure id="${data[i].goods_id}"><img lazy=${data[i].img} class="lazy">
                     <figcaption><p class="yc">${data[i].name}</p>
                     <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
                     </figure>`;
 
                 }
-                $(".row1").eq(0).html(str1);
-
-                $(".row1").eq(2).html(str1);
+                $(".row1").html(str1);
+                // that.imgs=document.querySelectorAll(".lazy");
+                // that.lazyImg(that.imgs);
                 that.figclick();
             }
         );
@@ -133,7 +119,7 @@ class Index {
 
                 for (var i = 0; i < 8; i++) {
                     // if(i<3){
-                    str2 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    str2 += `<figure id="${data[i].goods_id}"><img lazy=${data[i].img}  class="lazy">
                 <figcaption><p class="yc">${data[i].name}</p>
                 <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
                 </figure>`;
@@ -144,21 +130,26 @@ class Index {
             }
         );
         $.getJSON("http://localhost/rongyaoqinxuan/src/static/jingpin.json",
-            function (data) {
+             (data)=> {
                 var str3 = "";
 
                 for (var i = 0; i < 8; i++) {
                     // if(i<3){
-                    str3 += `<figure id="${data[i].goods_id}"><img src=${data[i].img}>
+                    str3 += `<figure id="${data[i].goods_id}"><img lazy=${data[i].img} class="lazy">
                 <figcaption><p class="yc">${data[i].name}</p>
                 <p><span id="nowprice">￥${data[i].nowprice}</span ><span id="beforeprice"><s>￥${data[i].beforeprice}</s></span></p></figcaption>
                 </figure>`;
 
                 }
                 $(".row3").html(str3);
+                this.imgs=document.querySelectorAll(".lazy")
+                console.log(this.imgs.length)
+                this.arr=Array.from(this.imgs);
+                lazyImg(this.imgs);
                 that.figclick();
             }
         );
+        
     }
     figclick() {
         $(".row1").children("figure").click(function () {

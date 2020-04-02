@@ -45,11 +45,11 @@ class Cart {
             url: "http://localhost/rongyaoqinxuan/src/static/php/cart2.php",
             data: { user: this.user },
             success: function (response) {
-                console.log((response))
+                // console.log((response))
                 response = response.split(",");
-                console.log(response)
+                // console.log(response)
                 response.pop()
-                console.log(response.length)
+                // console.log(response.length)
                 that.data = response;
                 this.status = 1;
                 if (0 < response.length) {
@@ -63,7 +63,7 @@ class Cart {
                     var k = 1;
 
                     for (var i = 0; i < response.length / 6; i++) {
-                        console.log(i)
+                        // console.log(i)
 
                         var total = response[i + 2 + k] * response[i + 1 + k];
                         that.sum += total;

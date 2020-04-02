@@ -38,7 +38,7 @@ class Detail {
         
         this.getdata();
         $(this.reduce).click(function () {
-            if(0<that.num)
+            if(1<that.num)
             $("#num").html(--that.num)
           })
         $(this.increase).click(function () {
