@@ -6,6 +6,7 @@ class Detail {
         this.goodsid="";
         this.user="";
         this.num=1;
+        this.status=0;
         this.box = $(".box");
         this.index=0;
         this.data={};
@@ -20,7 +21,7 @@ class Detail {
             that.cart()
           })
         this.quit.onclick=function () {
-            alert(1)
+            this.status=0;
             that.exit();
           }
           console.log($("#quit").html())
@@ -65,24 +66,28 @@ class Detail {
         }, 3000);
     }
     cart(){
-        $.ajax({
-            type: "post",
-            url: "http://localhost/rongyaoqinxuan/src/static/php/cart.php",
-            data: {user:this.user,
-                goodsid:this.id,
-                price:this.data.nowprice,
-                imgsrc:this.data.img1,
-                num:$("#num").html()*1,
-                goodsname:this.data.name
-            },
-            success: function (response) {
-                console.log(response)
-            }
-        });
+        if(this.status==1){
+            
+            $.ajax({
+                type: "post",
+                url: "http://localhost/rongyaoqinxuan/src/static/php/cart.php",
+                data: {user:this.user,
+                    goodsid:this.id,
+                    price:this.data.nowprice,
+                    imgsrc:this.data.img1,
+                    num:$("#num").html()*1,
+                    goodsname:this.data.name
+                },
+                success: function (response) {
+                    console.log(response)
+                }
+            });
+        }
     }
     check(){
         var user=sessionStorage.getItem("user");
         if(user){
+            this.status=1;
             console.log(JSON.parse(user).sucMsg)
             $(".user_info").css("display","none");
             $(".logined").css("display","block");

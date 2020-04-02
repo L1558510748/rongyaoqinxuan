@@ -33,6 +33,10 @@ class Cart {
             $("#username").html(JSON.parse(user).sucMsg)
             this.user = JSON.parse(user).sucMsg;
         }
+        else{
+            alert("请先登录!")
+            $(window).attr('location', "./login.html")
+        }
     }
     init() {
         var that = this;
