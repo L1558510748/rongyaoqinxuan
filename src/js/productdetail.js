@@ -46,7 +46,7 @@ class Detail {
           })
         $(".smallpic").find("img").click(function () {
             var imgurl=($(this).attr("src"));
-            console.log($(this).addClass("active").siblings().removeClass("active"))
+            $(this).addClass("active").siblings().removeClass("active")
             $(".bigpic").find("img").attr("src",imgurl)
             $(".scrollpic").find("img").attr("src",imgurl)
           });
