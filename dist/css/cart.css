@@ -62,6 +62,9 @@ body {
           list-style: none;
           display: flex;
           justify-content: space-around; }
+          html .content_wrap .content .shoppingcart .cart_head #allprice,
+          body .content_wrap .content .shoppingcart .cart_head #allprice {
+            color: #fa4187; }
           html .content_wrap .content .shoppingcart .cart_head li,
           body .content_wrap .content .shoppingcart .cart_head li {
             text-align: center;
@@ -82,53 +85,56 @@ body {
               background-color: #fa4187;
               color: #fff;
               height: 40px; }
-        html .content_wrap .content .shoppingcart .cart_list ul,
-        body .content_wrap .content .shoppingcart .cart_list ul {
+        html .content_wrap .content .shoppingcart .cart_list div ul,
+        body .content_wrap .content .shoppingcart .cart_list div ul {
           display: flex;
           justify-content: space-around;
           align-items: center;
           height: 100px;
           background-color: #fff;
           margin-bottom: 10px; }
-          html .content_wrap .content .shoppingcart .cart_list ul li,
-          body .content_wrap .content .shoppingcart .cart_list ul li {
+          html .content_wrap .content .shoppingcart .cart_list div ul li,
+          body .content_wrap .content .shoppingcart .cart_list div ul li {
             height: 100px;
             width: 180px;
             float: left;
             text-align: center;
             line-height: 100px; }
-            html .content_wrap .content .shoppingcart .cart_list ul li:first-child,
-            body .content_wrap .content .shoppingcart .cart_list ul li:first-child {
+            html .content_wrap .content .shoppingcart .cart_list div ul li:first-child,
+            body .content_wrap .content .shoppingcart .cart_list div ul li:first-child {
               text-align: left;
               margin-left: 18px;
               width: 80px; }
-            html .content_wrap .content .shoppingcart .cart_list ul li input,
-            body .content_wrap .content .shoppingcart .cart_list ul li input {
+            html .content_wrap .content .shoppingcart .cart_list div ul li input,
+            body .content_wrap .content .shoppingcart .cart_list div ul li input {
               width: 20px;
               height: 20px;
               background-color: #fff;
               border: 1px solid; }
-            html .content_wrap .content .shoppingcart .cart_list ul li #total,
-            body .content_wrap .content .shoppingcart .cart_list ul li #total {
+            html .content_wrap .content .shoppingcart .cart_list div ul li .total,
+            body .content_wrap .content .shoppingcart .cart_list div ul li .total {
               color: #fa4187; }
-            html .content_wrap .content .shoppingcart .cart_list ul li #namespan,
-            body .content_wrap .content .shoppingcart .cart_list ul li #namespan {
+            html .content_wrap .content .shoppingcart .cart_list div ul li #namespan,
+            body .content_wrap .content .shoppingcart .cart_list div ul li #namespan {
               height: 100px;
               width: 120px;
               display: inline-block;
               font-size: 12px;
               position: relative; }
-              html .content_wrap .content .shoppingcart .cart_list ul li #namespan img,
-              body .content_wrap .content .shoppingcart .cart_list ul li #namespan img {
+              html .content_wrap .content .shoppingcart .cart_list div ul li #namespan img,
+              body .content_wrap .content .shoppingcart .cart_list div ul li #namespan img {
                 position: absolute;
                 top: 20px;
                 left: -70px;
                 width: 60px;
                 height: 60px; }
-              html .content_wrap .content .shoppingcart .cart_list ul li #namespan b,
-              body .content_wrap .content .shoppingcart .cart_list ul li #namespan b {
+              html .content_wrap .content .shoppingcart .cart_list div ul li #namespan b,
+              body .content_wrap .content .shoppingcart .cart_list div ul li #namespan b {
                 display: inline-block;
                 width: 120px;
                 height: 100px;
                 overflow: hidden;
                 white-space: nowrap; }
+          html .content_wrap .content .shoppingcart .cart_list div ul .total,
+          body .content_wrap .content .shoppingcart .cart_list div ul .total {
+            color: #fa4187; }

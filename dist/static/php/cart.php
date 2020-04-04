@@ -6,13 +6,20 @@ $num = $_REQUEST["num"];
 $price = $_REQUEST['price'];
 $imgsrc = $_REQUEST["imgsrc"];
 $goodsname=$_REQUEST['goodsname'];
-$sql = "SELECT * FROM cart WHERE user='" . $user . "'limit 0,1";
+$status=0;
+$sql = "SELECT * FROM cart WHERE user='" . $user . "'";
 $res1 = mysqli_query($link, $sql);
-$arr = mysqli_fetch_array($res1);
-if ($arr['goodsid'] == $goodsid) {
+// $arr = mysqli_fetch_array($res1);
 
-    $num1 = $num + $arr['num'];
-    $sql2 = "UPDATE cart SET num='" . $num1 . "' WHERE user='" . $user . "'";
+while($row = mysqli_fetch_array($res1)){
+    if($row['goodsid']==$goodsid){
+        $status=$row['num'];
+    }
+}
+if ($status) {
+
+    $num1 = $num + $status;
+    $sql2 = "UPDATE cart SET num='" . $num1 . "' WHERE user='" . $user . "'AND `goodsid`='".$goodsid."'";
 
     mysqli_query($link, $sql2);
 } else {
@@ -24,7 +31,7 @@ if ($res) {
     $data = array("code" => 1, "errMsg" => "", "sucMsg" => "suc");
     echo json_encode($data);
 } else {
-    $data = array("code" => 0, "errMsg" => "注册失败", "sucMsg" => "");
+    $data = array("code" => 0, "errMsg" => "", "sucMsg" => "");
     echo json_encode($data);
-    mysqli_close($link);
 }
+mysqli_close($link);
