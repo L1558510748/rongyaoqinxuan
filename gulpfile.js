@@ -48,6 +48,12 @@ function staticFn() {
 }
 exports.static = staticFn;
 
+function copyFn() {
+    return gulp.src("./src/libs/**")
+    .pipe(gulp.dest("./dist/libs"))
+  }
+  exports.copy=copyFn;
+
 function sassFn() {
     return gulp.src("./src/sass/**")
     .pipe(sass())
@@ -68,15 +74,17 @@ function serverFn() {
     }))
 }
 exports.server=serverFn;
+
 function watchFn() {
     gulp.watch("./src/css/**",cssminFn);
     gulp.watch("./src/js/**",jsFn);
     gulp.watch("./src/html/**",htmlFn);
     gulp.watch("./src/static/**",staticFn);
     gulp.watch("./src/sass/**",sassFn);
+    gulp.watch("./src/libs/**",copyFn);
   }
   exports.watch=watchFn;
   exports.all=gulp.series(
-      gulp.parallel(cssminFn,jsFn,htmlFn,staticFn,sassFn),
+      gulp.parallel(cssminFn,jsFn,htmlFn,staticFn,sassFn,copyFn),
       gulp.parallel(serverFn,watchFn)
   )

@@ -12,8 +12,8 @@ class Login {
     }
     addEvent() {
         this.box.find("li").click(this.tab);
-        $(loginbtn).click(this.login);
-        $(registerbtn).click(this.register);
+        $("#loginbtn").click(this.login);
+        $("#registerbtn").click(this.register);
     }
     tab(){
         $(this).addClass("active").siblings().removeClass("active");

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/public.css">
+    <!-- <link rel="stylesheet" href="./sass/index.css"> -->
+    <link rel="stylesheet" href="./libs/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./libs/common.css">
+    <link rel="stylesheet" href="./css/index.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div class="backColor">
+            <div class="head_info">
+                <div class="link">
+                    <a href="">荣耀官网</a>
+                    <a href="">花粉俱乐部</a>
+                    <a href="">下载APP</a>
+                    <a href="">关注小程序</a>
+                </div>
+                <div class="user_info">
+                    <a href="./html/login.html">登录</a>
+                    <a href="./html/login.html">注册&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</a>
+                    <a href="" class="myorder">我的订单</a>
+                </div>
+                <div class="logined">
+                    <span id="username"></span>
+                    <span href="" id="quit">退出&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>
+                    <span class="myorder">我的订单</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="head_nav">
+                <a href=""><img src="https://qinxuan.honor.cn/static/img/logo.1a422e6.png" alt=""></a>
+                <div class="head_right">
+                    <div class="search_box">
+                        <input type="text" placeholder="荣耀亲选，精品精选">
+                        <div class="carousel">
+                            <div class="box">
+                                <ul>
+                                    <li>5G标杆 荣耀V30</li>
+                                    <li>荣耀V30 PRO</li>
+                                    <li>U盘 Max</li>
+                                    <li>暖风机</li>
+                                    <li>笔记本电脑</li>
+                                    <li>电动牙刷Pro</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <a href="./html/cart.html" class="cart"><i class="fa fa-shopping-cart"></i><span>购物车</span></a>
+                </div>
+            </div>
+            <div class="header_space"></div>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="imgbox">
+            <a><img src="./static/img/banner1.jpg" alt=""></a>
+            <a><img src="./static/img/banner2.jpg" alt=""></a>
+            <a><img src="./static/img/banner3.jpg" alt=""></a>
+            <a><img src="./static/img/banner4.jpg" alt=""></a>
+
+        </div>
+        <div class="btns">
+            <input type="button" id="left" value="<">
+            <input type="button" id="right" value=">">
+        </div>
+        <div class="banner_content">
+            <div class="menu_wrap">
+                <div class="menu" id="menu">
+                    <ul>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>亲选生态</h5>
+                                <ul class="title_li">
+                                    <li>个护电器&nbsp;</li>
+                                    <li>家用电器&nbsp;</li>
+                                    <li>居家餐厨&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/dRYdBMxT0ou1fDQVyXfb.png"
+                                            alt="">
+                                        <figcaption>
+                                            个护电器
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/ZgO63rWgVHTUUYQfFj2G.png"
+                                            alt="">
+                                        <figcaption>
+                                            家用电器
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/2iSDuT15FDxe6NDo2NtF.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            居家餐厨
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/xgsBMigR1zvGOZA1jOoo.png"
+                                            alt="">
+                                        <figcaption>
+                                            数码配件
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>荣耀手机</h5>
+                                <ul class="title_li">
+                                    <li>V系列&nbsp;</li>
+                                    <li>HONOR系列&nbsp;</li>
+                                    <li>X系列&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/VyvBwH9wazEVAdBXHldf.png"
+                                            alt="">
+                                        <figcaption>
+                                            V系列
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/mWdC5LjN4km8g6fgQQ9r.png"
+                                            alt="">
+                                        <figcaption>
+                                            HONOR系列
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/ym8dzT9N9K3xick0DxO0.png"
+                                            alt="">
+                                        <figcaption>
+                                            X系列
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/9DrSZoMg8k6f0KNV1MYe.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            Play系列
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>智慧屏</h5>
+                                <ul class="title_li">
+                                    <li>智慧屏&nbsp;</li>
+                                    <li>智慧屏配件&nbsp;</li>
+
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/rNcZMGoNGqQMpgXMn9WV.png"
+                                            alt="">
+                                        <figcaption>
+                                            智慧屏
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/KJaGzSj5PdT2Gl4xX9jd.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            智慧屏配件
+                                        </figcaption>
+                                    </figure>
+                                </li>
+
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>电脑平板</h5>
+                                <ul class="title_li">
+                                    <li>笔记本电脑&nbsp;</li>
+                                    <li>平板电脑&nbsp;</li>
+                                    <li>笔记本配件&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/PWboS8lJFfxbqIGI0Yxy.png"
+                                            alt="">
+                                        <figcaption>
+                                            笔记本电脑
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/kPEfsLaBxryOgxR5XgcM.png"
+                                            alt="">
+                                        <figcaption>
+                                            平板电脑
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/iXDpiMo1BlavFmW2jOsN.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            笔记本配件
+                                        </figcaption>
+                                    </figure>
+                                </li>
+
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>智能家居</h5>
+                                <ul class="title_li">
+                                    <li>体脂秤&nbsp;</li>
+                                    <li>路由器&nbsp;</li>
+                                    <li>字母分布式路由&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/awrDTKfrlu1L4N2XUR5B.png"
+                                            alt="">
+                                        <figcaption>
+                                            体脂秤
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/wbhj6UiupEEwG2S3A5g4.png"
+                                            alt="">
+                                        <figcaption>
+                                            路由器
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/JmgOP7Veogmh8lBHxDAq.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            字母分布式路由
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/VhKHC3nI6bHlM78rrZG3.png"
+                                            alt="">
+                                        <figcaption>
+                                            智能音箱
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/7GUR6fcHyJEY8BCMUQD7.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            荣耀存储
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>智能穿戴</h5>
+                                <ul class="title_li">
+                                    <li>手表&nbsp;</li>
+                                    <li>手环&nbsp;</li>
+                                    <li>智能设备配件&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/5nuANAxl4VTYEBZXHKA8.png"
+                                            alt="">
+                                        <figcaption>
+                                            手表
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/IyvmWZ88BiCdgvVUarhU.png"
+                                            alt="">
+                                        <figcaption>
+                                            手环
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/jZJlQb3kqFVo1VfjB06r.jpg"
+                                            alt="">
+                                        <figcaption>
+                                            智能设备配件
+                                        </figcaption>
+                                    </figure>
+                                </li>
+
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        <li class="menu_li">
+                            <div class="nav_box">
+                                <h5>时尚数码</h5>
+                                <ul class="title_li">
+                                    <li>无线/蓝牙耳机&nbsp;</li>
+                                    <li>线控耳机&nbsp;</li>
+                                    <li>音箱&nbsp;</li>
+                                </ul>
+                            </div>
+                            <i class="fa fa-angle-right"></i>
+                            <ul class="second">
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/VyvBwH9wazEVAdBXHldf.png"
+                                            alt="">
+                                        <figcaption>
+                                            V系列
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/SkQ12yNFzssZxiXhImA6.png"
+                                            alt="">
+                                        <figcaption>
+                                            无线/蓝牙耳机
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/HvVLev8OmQ8WMATyNYlm.png"
+                                            alt="">
+                                        <figcaption>
+                                            线控耳机
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/caVe4lqhFFpqSPIHnK4P.png"
+                                            alt="">
+                                        <figcaption>
+                                            音箱
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/5qgmXYo6epQXpjaHDOEZ.png"
+                                            alt="">
+                                        <figcaption>
+                                            摄像头/镜头
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="https://res.vmallres.com/pimages/cnqx/pages/mobile/frontCategory/j1iAsGNthLjo49rqz36e.png"
+                                            alt="">
+                                        <figcaption>
+                                            便携潮器
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                                <li>
+                                    <figure>
+                                        <img src="./static/img/more.png" alt="">
+                                        <figcaption>
+                                            查看全部
+                                        </figcaption>
+                                    </figure>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+
+        <div class="goods_list">
+            <div class="title_box">
+                <div class="classify_title floor">
+                    <h3>亲选生态</h3>
+                    <p>精心所选&nbsp;大厂专供</p>
+                </div>
+                <a href="./html/channel.html?id=qinxuan">查看更多&nbsp;<i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="el_row">
+                <div class="row1">
+                    
+                </div>
+
+            </div>
+
+            <div class="title_box">
+                <div class="classify_title floor">
+                    <h3>智慧屏系列</h3>
+                    <p>这不是电视&nbsp;这是电视的未来</p>
+                </div>
+                <a href="./html/channel.html?id=zhihui">查看更多&nbsp;<i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="el_row">
+                <div class="row2">
+                    
+                </div>
+
+            </div>
+            <div class="title_box">
+                <div class="classify_title floor">
+                    <h3>精品推荐</h3>
+                    <p>亲选必买好物</p>
+                </div>
+                <a href="./html/channel.html?id=jingpin">查看更多&nbsp;<i class="fa fa-angle-right"></i></a>
+            </div>
+            <div class="el_row">
+                <div class="row3">
+                    
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="guarantee">
+
+            <div class="guarantee-box">
+                <div><img src="./static/img/p1.png" alt="">荣耀亲选</div>
+                <div><img src="./static/img/p2.png" alt="">官方正品保证</div>
+                <div><img src="./static/img/p3.png" alt="">荣耀爆品首发</div>
+                <div><img src="./static/img/p4.png" alt="">亲选好物推荐</div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="foot_box">
+                <div>
+                    <h2>联系我们</h2>
+                    <h2>24小时在线服务</h2>
+                    <a href="" class="foot_btn"><i class="fa fa-volume-control-phone"></i> 在线客服</a>
+                </div>
+                <div class="line"></div>
+                <div>
+                    <h2>下载APP</h2>
+                    <img src="https://qinxuan.honor.cn/static/img/qrcode-app.e8d4126.png" alt="">
+                    <a href="" class=" foot_msg">
+                        领取520新人礼包
+                    </a>
+                </div>
+                <div class="line"></div>
+                <div>
+                    <h2>关注小程序</h2>
+                    <img src="https://qinxuan.honor.cn/static/img/qrcode-mini.f7b7db0.png" alt="">
+                    <a href="" class=" foot_msg">
+                        参加0元抽奖赢大礼
+                    </a>
+                </div>
+            </div>
+            <div class="agreement">
+                <a href="">隐私政策</a>
+                <span>|</span>
+                <a href="">用户协议</a>
+                <span>|</span>
+                <a href="">关于Cookie</a>
+
+            </div>
+            <div class="foot_right">
+                <p>copyright 2018-2020 honor.cn版权所有营业执照 备案主体编号：44201919072182粤ICP备19015064号粤公网安备
+                    44190002003939号增值电信业务经营许可证：粤B2-20190762</p>
+            </div>
+        </div>
+    </footer>
+    <div class="side_help">
+
+        <ul>
+            <li id="fixed_code"><img src="./static/img/fixed_code.png" alt="">
+                <div class="hover_info">
+                    <img src="./static/img/fixed_code1.png" alt="">
+                </div>
+            </li>
+            <li id="fixed_phone"><img src="./static/img/fixed_phone.png" alt="">
+                <input type="button" class="fixed_msg" value="在线客服">
+            </li>
+            <li id="fixed_cart"><img src="./static/img/fixed_cart.png" alt="">
+                <!-- <button class="fixed_msg">购物车</button> -->
+                <input type="button" class="fixed_msg" value="购物车">
+            </li>
+            <!-- <li id="fixed_top" >
+                <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                <input type="button" class="fixed_msg" value="返回顶部">
+            </li> -->
+
+        </ul>
+        <div id="fixed_top">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            <input type="button" class="fixed_msg" value="返回顶部">
+        </div>
+
+
+    </div>
+    <div class="floor_list">
+        <ul class="list">
+            <li>亲选生态</li>
+            <li>智慧屏系列</li>
+            <li>精品推荐</li>
+        </ul>
+    </div>
+    <script src="https://lib.baomitu.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./libs/banner.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./libs/lazyload.js"></script>
+</body>
+
+</html>
